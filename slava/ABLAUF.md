@@ -37,18 +37,15 @@
 
 - [ ] Folien: [caching strategies](slides/PWA.md#caching-strategies)
 - [ ] Demo:[caches demo](demos/m03-cache/cache.html)
-- [ ] Commit:[comit](https://github.com/ppedvAG/2020-10-19-pwa-vc/commit/b8fb80b1b6306d74b27cc3320f1347eb6cd0bc0d)
+- [ ] Commit:[commit](https://github.com/ppedvAG/2020-10-19-pwa-vc/commit/b8fb80b1b6306d74b27cc3320f1347eb6cd0bc0d)
 
 ## MODULE 05 | SERVICE WORKER
 
 - [ ] Folien: [service worker](slides/PWA.md#service-worker)
-- [ ] Link:
-- [ ] Demo:
-- [ ] Aufgabe:
-- [ ] L�sung:
-- [ ] Commit:
+- [ ] Demo:[demo sw](demos/m05-SW/index.html) 
+- [ ] Commit:[commit](https://github.com/ppedvAG/2020-10-19-pwa-vc/commit/1aadd79409439045da86e9e3335107416e3742d8)
 
-## MODULE XX | WEB APP MANIFEST
+## MODULE 06 | WEB APP MANIFEST
 
 - [ ] Folien: [web-app-manifest](slides/PWA.md#web-app-manifest)
 - [ ] Link:
