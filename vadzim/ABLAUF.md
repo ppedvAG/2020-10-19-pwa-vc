@@ -38,7 +38,7 @@
 
 - [x] Folien: [service worker](slides/PWA.md#service-worker)
 - [x] Demo: [demo sw](demos/m05-service-worker/sw.js)
-- [x] Commit: [Commit]()
+- [x] Commit: [Commit](https://github.com/ppedvAG/2020-10-19-pwa-vc/commit/14deada1aef5102204def0ab696225ff6254e77f)
 
 ## MODULE 06 | WEB APP MANIFEST
 
@@ -49,29 +49,19 @@
 ## MODULE XX | INSTALLABILITY
 
 - [ ] Folien: [installability](slides/PWA.md#installability)
-- [ ] Demo:
-- [ ] Commit: [Commit]()
 
 ## MODULE XX | PUSH NOTIFICATIONS
 
 - [ ] Folien: [push-notifications](slides/PWA.md#push-notifications)
-- [ ] Demo:
-- [ ] Commit: [Commit]()
 
 ## MODULE XX | TOOLS & FRAMEWORKS
 
 - [ ] Folien: [pwa-tools--frameworks](slides/PWA.md#pwa-tools--frameworks)
-- [ ] Demo:
-- [ ] Commit: [Commit]()
 
 ## MODULE XX | CLIENT-DEVICE-ACCESS
 
 - [ ] Folien: [client-device-access](slides/PWA.md#client-device-access)
-- [ ] Demo:
-- [ ] Commit:
   
 ## MODULE XX | FACTS
 
 - [ ] Folien: [facts](slides/PWA.md#facts)
-- [ ] Demo:
-- [ ] Commit:
