@@ -43,9 +43,9 @@
 
 ## MODULE 06  | WEB APP MANIFEST
 
-- [ ] Folien: [web-app-manifest](slides/PWA.md#web-app-manifest)
-- [ ] Demo: [demo manifest](demo/m06-manifest/manifest.json)
-- [ ] Commit:[Commit]()
+- [x] Folien: [web-app-manifest](slides/PWA.md#web-app-manifest)
+- [x] Demo: [demo manifest](demo/m06-manifest/manifest.json)
+- [x] Commit:[Commit]()
 
 ## MODULE XX | INSTALLABILITY
 
