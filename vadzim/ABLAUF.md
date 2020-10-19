@@ -5,12 +5,12 @@
 - [ ] HTML [demo](demos/m00-warming-up/html.html)
 - [ ] CSS [demo](demos/m00-warming-up/css.css)
 - [ ] JS [demo](demos/m00-warming-up/js.js)
+- [ ] VScode Shortcuts [VScode Shortcuts](shortcuts-vscode.md)
 
 ## MODULE 01 | GETTING STARTED
 
-- [ ] Folien: [pwa getting started](PWA.md#getting-started)
-- [ ] Link:
-- [ ] Demo:
+- [ ] Folien: [pwa getting started](slides/PWA.md#getting-started)
+- [ ] Demo: [index.html](demos/m01-getting-started/index.html)
 - [ ] Aufgabe:
 - [ ] L�sung:
 - [ ] Commit:
