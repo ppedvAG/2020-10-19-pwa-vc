@@ -21,25 +21,22 @@
 - [x] Demo:[fetch demo](demos/m02-fetch-api/fetch.html)
 - [x] Demo:[todos](demos/m02-fetch-api/index.html)
 - [x] Lighthause:
-- [x] Commit:[commit]()
+- [x] Commit:[commit](https://github.com/ppedvAG/2020-10-19-pwa-vc/commit/4757184e5446fbfd5affa608718365968710c9ea)
 
 
 ## MODULE XX | BROWSER STORAGE
 
-- [ ] Folien: [browser storage](PWA.md#browser-storage)
+- [ ] Folien: [browser storage](slides/PWA.md#browser-storage)
 - [ ] Link:
-- [ ] Demo:
+- [ ] Demo:[cashes demo](demos/m03-cache/cache.html)
 - [ ] Aufgabe:
 - [ ] L�sung:
 - [ ] Commit:
 
 ## MODULE XX | CACHING STRATEGIES
 
-- [ ] Folien: [caching strategies](PWA.md#caching-strategies)
-- [ ] Link:
-- [ ] Demo:
-- [ ] Aufgabe:
-- [ ] L�sung:
+- [ ] Folien: [caching strategies](slides/PWA.md#caching-strategies)
+- [ ] Demo:[caches demo](demos/m03-cache/cache.html)
 - [ ] Commit:
 
 ## MODULE 03 | SERVICE WORKER
