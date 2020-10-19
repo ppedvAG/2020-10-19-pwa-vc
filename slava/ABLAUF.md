@@ -26,35 +26,31 @@
 
 ## MODULE 03 | BROWSER STORAGE
 
-- [ ] Folien: [browser storage](slides/PWA.md#browser-storage)
-- [ ] Link:
-- [ ] Demo:[cashes demo](demos/m03-cache/cache.html)
-- [ ] Aufgabe:
-- [ ] L�sung:
-- [ ] Commit:
+- [x] Folien: [browser storage](slides/PWA.md#browser-storage)
+- [x] Link:
+- [x] Demo:[cashes demo](demos/m03-cache/cache.html)
+- [x] Aufgabe:
+- [x] L�sung:
+- [x] Commit:
 
 ## MODULE 04 | CACHING STRATEGIES
 
-- [ ] Folien: [caching strategies](slides/PWA.md#caching-strategies)
-- [ ] Demo:[caches demo](demos/m03-cache/cache.html)
-- [ ] Commit:[commit](https://github.com/ppedvAG/2020-10-19-pwa-vc/commit/b8fb80b1b6306d74b27cc3320f1347eb6cd0bc0d)
+- [x] Folien: [caching strategies](slides/PWA.md#caching-strategies)
+- [x] Demo:[caches demo](demos/m03-cache/cache.html)
+- [x] Commit:[commit](https://github.com/ppedvAG/2020-10-19-pwa-vc/commit/b8fb80b1b6306d74b27cc3320f1347eb6cd0bc0d)
 
 ## MODULE 05 | SERVICE WORKER
 
-- [ ] Folien: [service worker](slides/PWA.md#service-worker)
-- [ ] Demo:[demo sw](demos/m05-SW/index.html) 
-- [ ] Commit:[commit](https://github.com/ppedvAG/2020-10-19-pwa-vc/commit/1aadd79409439045da86e9e3335107416e3742d8)
+- [x] Folien: [service worker](slides/PWA.md#service-worker)
+- [x] Demo:[demo sw](demos/m05-SW/index.html) 
+- [x] Commit:[commit](https://github.com/ppedvAG/2020-10-19-pwa-vc/commit/1aadd79409439045da86e9e3335107416e3742d8)
 
 ## MODULE 06 | WEB APP MANIFEST
 
-- [ ] Folien: [web-app-manifest](slides/PWA.md#web-app-manifest)
-- [ ] Link:
-- [ ] Demo:
-- [ ] Aufgabe:
-- [ ] L�sung:
-- [ ] Commit:
-
-## MODULE XX | INSTALLABILITY
+- [x] Folien: [web-app-manifest](slides/PWA.md#web-app-manifest)
+- [x] Demo:[demo Manifestt](demos/m06-Manifest/index.html)
+- [x] Commit:[commit](https://github.com/ppedvAG/2020-10-19-pwa-vc/commit/d8fd9fa4fe6bbe00262c0c5e5452a8388cb14e7f)
+x## MODULE XX | INSTALLABILITY
 
 - [ ] Folien: [installability](slides/PWA.md#installability)
 - [ ] Link:
