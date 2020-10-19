@@ -45,7 +45,7 @@
 
 - [x] Folien: [web-app-manifest](slides/PWA.md#web-app-manifest)
 - [x] Demo: [demo manifest](demo/m06-manifest/manifest.json)
-- [x] Commit:[Commit]()
+- [x] Commit:[Commit](https://github.com/ppedvAG/2020-10-19-pwa-vc/commit/b76fffb6a38b7bbadd11b0d948d09c734f64af00)
 
 ## MODULE XX | INSTALLABILITY
 
