@@ -37,11 +37,11 @@
 
 - [ ] Folien: [caching strategies](slides/PWA.md#caching-strategies)
 - [ ] Demo:[caches demo](demos/m03-cache/cache.html)
-- [ ] Commit:
+- [ ] Commit:[comit](https://github.com/ppedvAG/2020-10-19-pwa-vc/commit/b8fb80b1b6306d74b27cc3320f1347eb6cd0bc0d)
 
 ## MODULE 03 | SERVICE WORKER
 
-- [ ] Folien: [service worker](PWA.md#service-worker)
+- [ ] Folien: [service worker](slides/PWA.md#service-worker)
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
@@ -50,7 +50,7 @@
 
 ## MODULE XX | WEB APP MANIFEST
 
-- [ ] Folien: [web-app-manifest](PWA.md#web-app-manifest)
+- [ ] Folien: [web-app-manifest](slides/PWA.md#web-app-manifest)
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
@@ -59,7 +59,7 @@
 
 ## MODULE XX | INSTALLABILITY
 
-- [ ] Folien: [installability](PWA.md#installability)
+- [ ] Folien: [installability](slides/PWA.md#installability)
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
@@ -68,7 +68,7 @@
 
 ## MODULE XX | PUSH NOTIFICATIONS
 
-- [ ] Folien: [push-notifications](PWA.md#push-notifications)
+- [ ] Folien: [push-notifications](slides/PWA.md#push-notifications)
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
@@ -77,7 +77,7 @@
 
 ## MODULE XX | TOOLS & FRAMEWORKS
 
-- [ ] Folien: [pwa-tools--frameworks](PWA.md#pwa-tools--frameworks)
+- [ ] Folien: [pwa-tools--frameworks](slides/PWA.md#pwa-tools--frameworks)
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
@@ -86,7 +86,7 @@
 
 ## MODULE XX | CLIENT-DEVICE-ACCESS
 
-- [ ] Folien: [client-device-access](PWA.md#client-device-access)
+- [ ] Folien: [client-device-access](slides/PWA.md#client-device-access)
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
@@ -95,7 +95,7 @@
   
 ## MODULE XX | FACTS
 
-- [ ] Folien: [facts](PWA.md#facts)
+- [ ] Folien: [facts](slides/PWA.md#facts)
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
