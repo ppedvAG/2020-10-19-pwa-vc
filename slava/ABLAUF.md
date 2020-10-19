@@ -1,10 +1,18 @@
+# ABLAUF, Version Slava
+
+## MODULE 00 | WARMING UP
+
+- [] HTML [demo](demos/m00-warming-up/html.html)
+- [] CSS [demo](demos/m00-warming-up/css.css)
+- [] JS [demo](demos/m00-warming-up/js.js)
+
 ## MODULE 01 | GETTING STARTED
 
 - [ ] Folien: [pwa getting started](PWA.md#getting-started)
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
-- [ ] Lösung:
+- [ ] Lï¿½sung:
 - [ ] Commit:
 
 ## MODULE XX | BROWSER STORAGE
@@ -13,7 +21,7 @@
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
-- [ ] Lösung:
+- [ ] Lï¿½sung:
 - [ ] Commit:
 
 ## MODULE XX | CACHING STRATEGIES
@@ -22,7 +30,7 @@
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
-- [ ] Lösung:
+- [ ] Lï¿½sung:
 - [ ] Commit:
 
 ## MODULE 03 | SERVICE WORKER
@@ -31,7 +39,7 @@
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
-- [ ] Lösung:
+- [ ] Lï¿½sung:
 - [ ] Commit:
 
 ## MODULE XX | WEB APP MANIFEST
@@ -40,7 +48,7 @@
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
-- [ ] Lösung:
+- [ ] Lï¿½sung:
 - [ ] Commit:
 
 ## MODULE XX | INSTALLABILITY
@@ -49,7 +57,7 @@
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
-- [ ] Lösung:
+- [ ] Lï¿½sung:
 - [ ] Commit:
 
 ## MODULE XX | PUSH NOTIFICATIONS
@@ -58,7 +66,7 @@
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
-- [ ] Lösung:
+- [ ] Lï¿½sung:
 - [ ] Commit:
 
 ## MODULE XX | TOOLS & FRAMEWORKS
@@ -67,7 +75,7 @@
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
-- [ ] Lösung:
+- [ ] Lï¿½sung:
 - [ ] Commit:
 
 ## MODULE XX | CLIENT-DEVICE-ACCESS
@@ -76,7 +84,7 @@
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
-- [ ] Lösung:
+- [ ] Lï¿½sung:
 - [ ] Commit:
   
 ## MODULE XX | FACTS
@@ -85,5 +93,5 @@
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
-- [ ] Lösung:
+- [ ] Lï¿½sung:
 - [ ] Commit:
