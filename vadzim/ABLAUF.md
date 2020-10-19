@@ -20,58 +20,58 @@
 - [x] Demo: [fetch demo](demos/m02-fetch-api/fetch.html)
 - [x] Demo: [todos](demos/m02-fetch-api/index.html)
 - [x] Lighthouse
-- [x] Commit: [Commit]()
+- [x] Commit: [Commit](https://github.com/ppedvAG/2020-10-19-pwa-vc/commit/6b117c27ccd61be3f515f2d3c2a4df9914ed9f87)
   
-## MODULE XX | BROWSER STORAGE
+## MODULE 03 | BROWSER STORAGE
 
-- [ ] Folien: [browser storage](PWA.md#browser-storage)
-- [ ] Demo:
+- [ ] Folien: [browser storage](slides/PWA.md#browser-storage)
+- [ ] Demo: [caches demo](demos/m03-cache/cache.html)
 - [ ] Commit: [Commit]()
 
 ## MODULE XX | CACHING STRATEGIES
 
-- [ ] Folien: [caching strategies](PWA.md#caching-strategies)
+- [ ] Folien: [caching strategies](slides/PWA.md#caching-strategies)
 - [ ] Demo:
 - [ ] Commit: [Commit]()
 
 ## MODULE 03 | SERVICE WORKER
 
-- [ ] Folien: [service worker](PWA.md#service-worker)
+- [ ] Folien: [service worker](slides/PWA.md#service-worker)
 - [ ] Demo:
 - [ ] Commit: [Commit]()
 
 ## MODULE XX | WEB APP MANIFEST
 
-- [ ] Folien: [web-app-manifest](PWA.md#web-app-manifest)
+- [ ] Folien: [web-app-manifest](slides/PWA.md#web-app-manifest)
 - [ ] Demo:
 - [ ] Commit: [Commit]()
 
 ## MODULE XX | INSTALLABILITY
 
-- [ ] Folien: [installability](PWA.md#installability)
+- [ ] Folien: [installability](slides/PWA.md#installability)
 - [ ] Demo:
 - [ ] Commit: [Commit]()
 
 ## MODULE XX | PUSH NOTIFICATIONS
 
-- [ ] Folien: [push-notifications](PWA.md#push-notifications)
+- [ ] Folien: [push-notifications](slides/PWA.md#push-notifications)
 - [ ] Demo:
 - [ ] Commit: [Commit]()
 
 ## MODULE XX | TOOLS & FRAMEWORKS
 
-- [ ] Folien: [pwa-tools--frameworks](PWA.md#pwa-tools--frameworks)
+- [ ] Folien: [pwa-tools--frameworks](slides/PWA.md#pwa-tools--frameworks)
 - [ ] Demo:
 - [ ] Commit: [Commit]()
 
 ## MODULE XX | CLIENT-DEVICE-ACCESS
 
-- [ ] Folien: [client-device-access](PWA.md#client-device-access)
+- [ ] Folien: [client-device-access](slides/PWA.md#client-device-access)
 - [ ] Demo:
 - [ ] Commit:
   
 ## MODULE XX | FACTS
 
-- [ ] Folien: [facts](PWA.md#facts)
+- [ ] Folien: [facts](slides/PWA.md#facts)
 - [ ] Demo:
 - [ ] Commit:
