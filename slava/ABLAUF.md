@@ -1,20 +1,10 @@
-# PROGRESSIVE WEB APPLICATIONS
-
-Ein Kurs von PPEDV :rocket:
-
-Datum: 19.10.2020
-
-Ort: VC
-
-Format: Turbo
-
 ## MODULE 01 | GETTING STARTED
 
 - [ ] Folien: [pwa getting started](PWA.md#getting-started)
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
-- [ ] LÃ¶sung:
+- [ ] Lösung:
 - [ ] Commit:
 
 ## MODULE XX | BROWSER STORAGE
@@ -23,7 +13,7 @@ Format: Turbo
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
-- [ ] LÃ¶sung:
+- [ ] Lösung:
 - [ ] Commit:
 
 ## MODULE XX | CACHING STRATEGIES
@@ -32,7 +22,7 @@ Format: Turbo
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
-- [ ] LÃ¶sung:
+- [ ] Lösung:
 - [ ] Commit:
 
 ## MODULE 03 | SERVICE WORKER
@@ -41,7 +31,7 @@ Format: Turbo
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
-- [ ] LÃ¶sung:
+- [ ] Lösung:
 - [ ] Commit:
 
 ## MODULE XX | WEB APP MANIFEST
@@ -50,7 +40,7 @@ Format: Turbo
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
-- [ ] LÃ¶sung:
+- [ ] Lösung:
 - [ ] Commit:
 
 ## MODULE XX | INSTALLABILITY
@@ -59,7 +49,7 @@ Format: Turbo
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
-- [ ] LÃ¶sung:
+- [ ] Lösung:
 - [ ] Commit:
 
 ## MODULE XX | PUSH NOTIFICATIONS
@@ -68,7 +58,7 @@ Format: Turbo
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
-- [ ] LÃ¶sung:
+- [ ] Lösung:
 - [ ] Commit:
 
 ## MODULE XX | TOOLS & FRAMEWORKS
@@ -77,7 +67,7 @@ Format: Turbo
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
-- [ ] LÃ¶sung:
+- [ ] Lösung:
 - [ ] Commit:
 
 ## MODULE XX | CLIENT-DEVICE-ACCESS
@@ -86,7 +76,7 @@ Format: Turbo
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
-- [ ] LÃ¶sung:
+- [ ] Lösung:
 - [ ] Commit:
   
 ## MODULE XX | FACTS
@@ -95,5 +85,5 @@ Format: Turbo
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
-- [ ] LÃ¶sung:
+- [ ] Lösung:
 - [ ] Commit:
