@@ -24,9 +24,9 @@
   
 ## MODULE 03 | BROWSER STORAGE
 
-- [ ] Folien: [browser storage](slides/PWA.md#browser-storage)
-- [ ] Demo: [caches demo](demos/m03-cache/cache.html)
-- [ ] Commit: [Commit]()
+- [x] Folien: [browser storage](slides/PWA.md#browser-storage)
+- [x] Demo: [caches demo](demos/m03-cache/cache.html)
+- [x] Commit: [Commit](https://github.com/ppedvAG/2020-10-19-pwa-vc/commit/b17e8b5ef7ddf8ca8e55e9d0a9be48a95ec27ff4)
 
 ## MODULE XX | CACHING STRATEGIES
 
