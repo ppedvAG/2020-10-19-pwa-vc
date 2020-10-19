@@ -24,7 +24,7 @@
 - [x] Commit:[commit](https://github.com/ppedvAG/2020-10-19-pwa-vc/commit/4757184e5446fbfd5affa608718365968710c9ea)
 
 
-## MODULE XX | BROWSER STORAGE
+## MODULE 03 | BROWSER STORAGE
 
 - [ ] Folien: [browser storage](slides/PWA.md#browser-storage)
 - [ ] Link:
@@ -33,13 +33,13 @@
 - [ ] L�sung:
 - [ ] Commit:
 
-## MODULE XX | CACHING STRATEGIES
+## MODULE 04 | CACHING STRATEGIES
 
 - [ ] Folien: [caching strategies](slides/PWA.md#caching-strategies)
 - [ ] Demo:[caches demo](demos/m03-cache/cache.html)
 - [ ] Commit:[comit](https://github.com/ppedvAG/2020-10-19-pwa-vc/commit/b8fb80b1b6306d74b27cc3320f1347eb6cd0bc0d)
 
-## MODULE 03 | SERVICE WORKER
+## MODULE 05 | SERVICE WORKER
 
 - [ ] Folien: [service worker](slides/PWA.md#service-worker)
 - [ ] Link:
