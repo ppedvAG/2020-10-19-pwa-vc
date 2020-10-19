@@ -27,9 +27,9 @@
 
 - [x] Folien: [browser storage](slides/PWA.md#browser-storage)
 - [x] Demo: [caches demo](demo/m03-cache/cache.html)
-- [x] Commit:
+- [x] Commit:[Commit](https://github.com/ppedvAG/2020-10-19-pwa-vc/commit/8ae7f5cfc5edee625568614960a2c6d67760cac2)
   
-## MODULE XX | CACHING STRATEGIES
+## MODULE 04 | CACHING STRATEGIES
 
 - [ ] Folien: [caching strategies](slides/PWA.md#caching-strategies)
 - [ ] Link:
