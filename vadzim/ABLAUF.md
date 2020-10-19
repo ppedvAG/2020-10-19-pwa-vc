@@ -36,11 +36,11 @@
 
 ## MODULE 05 | SERVICE WORKER
 
-- [ ] Folien: [service worker](slides/PWA.md#service-worker)
-- [ ] Demo:
-- [ ] Commit: [Commit]()
+- [x] Folien: [service worker](slides/PWA.md#service-worker)
+- [x] Demo: [demo sw](demos/m05-service-worker/sw.js)
+- [x] Commit: [Commit]()
 
-## MODULE XX | WEB APP MANIFEST
+## MODULE 06 | WEB APP MANIFEST
 
 - [ ] Folien: [web-app-manifest](slides/PWA.md#web-app-manifest)
 - [ ] Demo:
