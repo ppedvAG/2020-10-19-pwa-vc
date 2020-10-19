@@ -7,13 +7,13 @@
 | `shift_alt cursor` | edit many lines |
 | `shift_alt f` | format |
 | `alt up/down` | move line or selection |
+| `ctrl space` | force intellisense |
 | `ctrl k s` | vscode shortcuts |
 | `ctrl k 8` | fold all regions |
 | `ctrl k 9` | unfold all regions |
 | `ctrl l` | select line |
 | `ctrl c ctrl v` | duplicate line |
 | `alt_capsLock cursor` | edit many places|
-| `ctrl space` | force intellisense |
 | `ctrl leftclick` | go to definition |
 | `ctrl ö` | open terminal |
 | `ctrl #` | comment / uncomment |
