@@ -28,13 +28,13 @@
 - [x] Demo: [caches demo](demos/m03-cache/cache.html)
 - [x] Commit: [Commit](https://github.com/ppedvAG/2020-10-19-pwa-vc/commit/b17e8b5ef7ddf8ca8e55e9d0a9be48a95ec27ff4)
 
-## MODULE XX | CACHING STRATEGIES
+## MODULE 04 | CACHING STRATEGIES
 
-- [ ] Folien: [caching strategies](slides/PWA.md#caching-strategies)
-- [ ] Demo:
-- [ ] Commit: [Commit]()
+- [x] Folien: [caching strategies](slides/PWA.md#caching-strategies)
+- [x] Demo: [offline.html](demos/m04-offline/offline.html)
+- [x] Commit: [Commit](https://github.com/ppedvAG/2020-10-19-pwa-vc/commit/bf44cbcddd2296f7dc4316d972d7fe553126d11b)
 
-## MODULE 03 | SERVICE WORKER
+## MODULE 05 | SERVICE WORKER
 
 - [ ] Folien: [service worker](slides/PWA.md#service-worker)
 - [ ] Demo:
