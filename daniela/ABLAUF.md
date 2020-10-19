@@ -2,20 +2,26 @@
 
 ## Module 00 | Warming up 
 
-- [ ] HTML [demo](demo/m00-warming-up/html.html)
-- [ ] CSS [demo](demo/m00-warming-up/css.css)
-- [ ] JS [demo](demo/m00-warming-up/js.js)
-- [ ] VScode Shortcuts [Shortcuts](shortcuts-vscode.md)
+- [x ] HTML [demo](demo/m00-warming-up/html.html)
+- [x ] CSS [demo](demo/m00-warming-up/css.css)
+- [x ] JS [demo](demo/m00-warming-up/js.js)
+- [x ] VScode Shortcuts [Shortcuts](shortcuts-vscode.md)
+- [x ] [Commit](https://github.com/ppedvAG/2020-10-19-pwa-vc/commit/85af89bc1b5caff52b1bcffe4d5c1855f99e2ae9)
 
 
 ## MODULE 01 | GETTING STARTED
 
-- [ ] Folien: [pwa getting started](slides/PWA.md#getting-started)
-- [ ] Link:
-- [ ] Demo: [deindex.htmlmo](demo/m01-getting-started/index.html)
-- [ ] Aufgabe:
-- [ ] L�sung:
-- [ ] Commit:
+- [x] Folien: [pwa getting started](slides/PWA.md#getting-started)
+- [x] Demo: [deindex.htmlmo](demo/m01-getting-started/index.html)
+- [x] [Commit](https://github.com/ppedvAG/2020-10-19-pwa-vc/commit/80fd6641c72f3d93625c2a628e9141b3c9e7468a)
+
+## MODULE 02 | FETCH API
+
+- [x ] Folien: [fetch API](slides/PWA.md#fetch-api)
+- [x ] Demo: [fetch demo](demo/m02-fetch-api/fetch.html)
+- [x ] Demo: [todos](demo/m02-fetch-api/index.html)
+- [x ] Lighthouse
+- [x ] Commit: [Commit] ()
 
 ## MODULE XX | BROWSER STORAGE
 
@@ -25,7 +31,7 @@
 - [ ] Aufgabe:
 - [ ] L�sung:
 - [ ] Commit:
-
+  
 ## MODULE XX | CACHING STRATEGIES
 
 - [ ] Folien: [caching strategies](PWA.md#caching-strategies)
