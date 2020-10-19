@@ -5,6 +5,7 @@
 - [] HTML [demo](demos/m00-warming-up/html.html)
 - [] CSS [demo](demos/m00-warming-up/css.css)
 - [] JS [demo](demos/m00-warming-up/js.js)
+- [] VScode Shortcuts [VScode Shortcuts](shortcuts-vscode.md)
 
 ## MODULE 01 | GETTING STARTED
 
