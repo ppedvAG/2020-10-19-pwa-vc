@@ -15,6 +15,15 @@
 - [x] Demo:[index.html](demos/m01-getting-started/index.html)
 - [x] Commit:[commit](https://github.com/ppedvAG/2020-10-19-pwa-vc/commit/80fd6641c72f3d93625c2a628e9141b3c9e7468a)
 
+## MODULE 02 | FETCH API
+
+- [x] Folien: [FETCH API](slides/PWA.md#fetch-api)
+- [x] Demo:[fetch demo](demos/m02-fetch-api/fetch.html)
+- [x] Demo:[todos](demos/m02-fetch-api/index.html)
+- [x] Lighthause:
+- [x] Commit:[commit]()
+
+
 ## MODULE XX | BROWSER STORAGE
 
 - [ ] Folien: [browser storage](PWA.md#browser-storage)
