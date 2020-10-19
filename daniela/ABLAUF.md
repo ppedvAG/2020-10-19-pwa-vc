@@ -1,19 +1,29 @@
+# Ablauf, Version Daniela
+
+## Module 00 | Warming up 
+
+- [ ] HTML [demo](demo/m00-warming-up/html.html)
+- [ ] CSS [demo](demo/m00-warming-up/css.css)
+- [ ] JS [demo](demo/m00-warming-up/js.js)
+- [ ] VScode Shortcuts [Shortcuts](shortcuts-vscode.md)
+
+
 ## MODULE 01 | GETTING STARTED
 
-- [ ] Folien: [pwa getting started](PWA.md#getting-started)
+- [ ] Folien: [pwa getting started](slides/PWA.md#getting-started)
 - [ ] Link:
-- [ ] Demo:
+- [ ] Demo: [deindex.htmlmo](demo/m01-getting-started/index.html)
 - [ ] Aufgabe:
-- [ ] Lösung:
+- [ ] Lï¿½sung:
 - [ ] Commit:
 
 ## MODULE XX | BROWSER STORAGE
 
-- [ ] Folien: [browser storage](PWA.md#browser-storage)
+- [ ] Folien: [pwa getting started](PWA.md#browser-storage)
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
-- [ ] Lösung:
+- [ ] Lï¿½sung:
 - [ ] Commit:
 
 ## MODULE XX | CACHING STRATEGIES
@@ -22,7 +32,7 @@
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
-- [ ] Lösung:
+- [ ] Lï¿½sung:
 - [ ] Commit:
 
 ## MODULE 03 | SERVICE WORKER
@@ -31,7 +41,7 @@
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
-- [ ] Lösung:
+- [ ] Lï¿½sung:
 - [ ] Commit:
 
 ## MODULE XX | WEB APP MANIFEST
@@ -40,7 +50,7 @@
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
-- [ ] Lösung:
+- [ ] Lï¿½sung:
 - [ ] Commit:
 
 ## MODULE XX | INSTALLABILITY
@@ -49,7 +59,7 @@
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
-- [ ] Lösung:
+- [ ] Lï¿½sung:
 - [ ] Commit:
 
 ## MODULE XX | PUSH NOTIFICATIONS
@@ -58,7 +68,7 @@
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
-- [ ] Lösung:
+- [ ] Lï¿½sung:
 - [ ] Commit:
 
 ## MODULE XX | TOOLS & FRAMEWORKS
@@ -67,7 +77,7 @@
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
-- [ ] Lösung:
+- [ ] Lï¿½sung:
 - [ ] Commit:
 
 ## MODULE XX | CLIENT-DEVICE-ACCESS
@@ -76,7 +86,7 @@
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
-- [ ] Lösung:
+- [ ] Lï¿½sung:
 - [ ] Commit:
   
 ## MODULE XX | FACTS
@@ -85,5 +95,5 @@
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
-- [ ] Lösung:
+- [ ] Lï¿½sung:
 - [ ] Commit:
