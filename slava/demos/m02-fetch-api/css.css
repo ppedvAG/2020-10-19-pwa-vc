@@ -1,0 +1,23 @@
+header {
+    width: 100%;
+    height: 15vmin;
+    background-color: rgb(255, 106, 106);
+}
+ 
+header > h1 {
+    color: white;
+    text-align: center;
+}
+ 
+main {
+    width: 100%;
+    min-height: 85vmin;
+    background-color: rgb(206, 202, 202);
+}
+
+table {
+    width: 100%;
+    background-color: rgb(206, 202, 202);
+    
+
+}
