@@ -17,24 +17,21 @@
 
 ## MODULE 02 | FETCH API
 
-- [x ] Folien: [fetch API](slides/PWA.md#fetch-api)
-- [x ] Demo: [fetch demo](demo/m02-fetch-api/fetch.html)
-- [x ] Demo: [todos](demo/m02-fetch-api/index.html)
-- [x ] Lighthouse
-- [x ] Commit: [Commit] ()
+- [x] Folien: [fetch API](slides/PWA.md#fetch-api)
+- [x] Demo: [fetch demo](demo/m02-fetch-api/fetch.html)
+- [x] Demo: [todos](demo/m02-fetch-api/index.html)
+- [x] Lighthouse
+- [x] Commit: [Commit](https://github.com/ppedvAG/2020-10-19-pwa-vc/commit/34b9bb1cb15359b59c8d5b03b5d04d9a255ce286)
 
-## MODULE XX | BROWSER STORAGE
+## MODULE 03 | BROWSER STORAGE
 
-- [ ] Folien: [pwa getting started](PWA.md#browser-storage)
-- [ ] Link:
-- [ ] Demo:
-- [ ] Aufgabe:
-- [ ] L�sung:
-- [ ] Commit:
+- [x] Folien: [browser storage](slides/PWA.md#browser-storage)
+- [x] Demo: [caches demo](demo/m03-cache/cache.html)
+- [x] Commit:
   
 ## MODULE XX | CACHING STRATEGIES
 
-- [ ] Folien: [caching strategies](PWA.md#caching-strategies)
+- [ ] Folien: [caching strategies](slides/PWA.md#caching-strategies)
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
@@ -43,7 +40,7 @@
 
 ## MODULE 03 | SERVICE WORKER
 
-- [ ] Folien: [service worker](PWA.md#service-worker)
+- [ ] Folien: [service worker](slides/PWA.md#service-worker)
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
@@ -52,7 +49,7 @@
 
 ## MODULE XX | WEB APP MANIFEST
 
-- [ ] Folien: [web-app-manifest](PWA.md#web-app-manifest)
+- [ ] Folien: [web-app-manifest](slides/PWA.md#web-app-manifest)
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
@@ -61,7 +58,7 @@
 
 ## MODULE XX | INSTALLABILITY
 
-- [ ] Folien: [installability](PWA.md#installability)
+- [ ] Folien: [installability](slides/PWA.md#installability)
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
@@ -70,7 +67,7 @@
 
 ## MODULE XX | PUSH NOTIFICATIONS
 
-- [ ] Folien: [push-notifications](PWA.md#push-notifications)
+- [ ] Folien: [push-notifications](slides/PWA.md#push-notifications)
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
@@ -79,7 +76,7 @@
 
 ## MODULE XX | TOOLS & FRAMEWORKS
 
-- [ ] Folien: [pwa-tools--frameworks](PWA.md#pwa-tools--frameworks)
+- [ ] Folien: [pwa-tools--frameworks](slides/PWA.md#pwa-tools--frameworks)
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
@@ -88,7 +85,7 @@
 
 ## MODULE XX | CLIENT-DEVICE-ACCESS
 
-- [ ] Folien: [client-device-access](PWA.md#client-device-access)
+- [ ] Folien: [client-device-access](slides/PWA.md#client-device-access)
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
@@ -97,7 +94,7 @@
   
 ## MODULE XX | FACTS
 
-- [ ] Folien: [facts](PWA.md#facts)
+- [ ] Folien: [facts](slides/PWA.md#facts)
 - [ ] Link:
 - [ ] Demo:
 - [ ] Aufgabe:
