@@ -32,11 +32,8 @@
 ## MODULE 04 | CACHING STRATEGIES
 
 - [ ] Folien: [caching strategies](slides/PWA.md#caching-strategies)
-- [ ] Link:
-- [ ] Demo:
-- [ ] Aufgabe:
-- [ ] L�sung:
-- [ ] Commit:
+- [ ] Demo: [offline.html](demo/m04-offline/offline.html)
+- [ ] Commit:[Commit]()
 
 ## MODULE 03 | SERVICE WORKER
 
