@@ -1,0 +1,2222 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PWA.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<link href="pwa.css" rel="stylesheet"></link>
+<h1 id="progressive-web-applications">PROGRESSIVE WEB APPLICATIONS</h1>
+<p><img src="imgs/F2.png" alt="alt text" title="pwa logo"></p>
+<!-- //////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////// -->
+<section class="page">
+<article>
+<h2 id="inhalt">INHALT</h2>
+<hr>
+<p><a href="#getting-started">PWA &gt; GETTING-STARTED</a></p>
+<p><a href="#fetch-api">PWA &amp; FETCH API</a></p>
+<p><a href="#browser-storage">PWA &amp; BROWSER-STORAGE</a></p>
+<p><a href="#caching-strategies">PWA &amp; CACHING STRATEGIES</a></p>
+<p><a href="#service-worker">PWA &amp; SERVICE-WORKER</a></p>
+<p><a href="#web-app-manifest">PWA &amp; WEB-APP-MANIFEST</a></p>
+<p><a href="#installability">PWA &gt; INSTALLABILITY</a></p>
+<p><a href="#push-notifications">PWA &amp; PUSH-NOTIFICATIONS</a></p>
+<p><a href="#pwa-tools--frameworks">PWA &gt; TOOLS-&amp;-FRAMEWORKS</a></p>
+<p><a href="#client-device-access">PWA &amp; CLIENT-DEVICE-ACCESS</a></p>
+<p><a href="#facts">PWA &gt; FACTS</a></p>
+<p><a href="#anhang">ANHANG</a></p>
+</article>
+<!-- TODO #11 -->
+<!-- TODO #12 -->
+<!-- TODO #13 -->
+<article>
+<hr>
+<h4 id="back-to-readme">back to readme</h4>
+</article>
+</section>
+<!-- //////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////// -->
+<section class="page">
+<article>
+<h2 id="getting-started">GETTING-STARTED</h2>
+<hr>
+<p><a href="#idea-of-native-apps">IDEA OF #NATIVE-APPS</a></p>
+<p><a href="#idea-of-progressive-enhancement">IDEA OF #PROGRESSIVE-ENHANCEMENT</a></p>
+<p><a href="#idea-of-pwa">IDEA OF #PWA</a></p>
+<p><a href="#pwa-examples">PWA EXAMPLES</a></p>
+<p><a href="#primary-tools">PRIMARY TOOLS</a></p>
+<p><a href="#dev-workflow">DEV WORKFLOW</a></p>
+</article>
+<article>
+<hr>
+<h3 id="idea-of-native-apps">IDEA OF #NATIVE-APPS</h3>
+<p>WAS IST EINE NATIVE APP</p>
+<ul>
+<li>deutsch: systemeigene App</li>
+<li>zum Beispiel eine Mobile App, Desktop App, Windows App</li>
+<li>Gegenteil von einer plattformunabhängigen App (Web- / Hybrid- / Cross-App)</li>
+</ul>
+</article>
+<article>
+<hr>
+<h3 id="idea-of-progressive-enhancement">IDEA OF #PROGRESSIVE-ENHANCEMENT</h3>
+<p>WAS IST PROGRESSIVE VERBESSERUNG</p>
+<ul>
+<li>Ein Prinzip, nach welchem die Websites entwickelt werden</li>
+</ul>
+<p>WORIN BESTEHT DIESES PRINZIP</p>
+<ul>
+<li>mit jeder Internetverbindung, aber je besser die Verbindung, desto besser die Funktionalität</li>
+<li>mit jedem Webbrowser, aber je fortgeschrittener der Browser, desto besser die Funktionalität</li>
+<li>mit jedem Gerät, aber je stärker das Gerät, desto besser die Funktionalität</li>
+<li>mit und ohne JS wird ein Inhalt angezeigt</li>
+</ul>
+<!-- TODO #10 -->
+</article>
+<article>
+<hr>
+<h3 id="idea-of-pwa">IDEA OF #PWA</h3>
+<p>WAS IST PWA</p>
+<ul>
+<li>Progressive Web App</li>
+<li>PWA = Progressive Enhancement + Web App</li>
+<li>eine Website mit Merkmalen einer nativen App</li>
+</ul>
+<p>WOZU IST PWA</p>
+<ul>
+<li>um eine native Anwendung leicht aufrufbar zu machen, wie eine Webanwendung (über URL)</li>
+<li>um eine native Anwendung betriebsunabhängig zu machen, wie eine Webanwendung</li>
+<li>um eine Webanwendung auch offline nutzbar zu machen, wie eine native Anwendung</li>
+<li>um eine Webanwendung installierbar zu machen, wie eine native Anwendung</li>
+</ul>
+</article>
+<article>
+<hr>
+<h3 id="pwa-examples">PWA EXAMPLES</h3>
+<ul>
+<li>[https://app.starbucks.com/]</li>
+<li>[https://twitter.com]</li>
+<li>[https://www.pinterest.de/]</li>
+<li>[https://www.trivago.de/]</li>
+<li>[https://angular.io]</li>
+<li>[(spotify desktop)]</li>
+<li>[(visual studio code)]</li>
+</ul>
+<p>Listen von PWAs</p>
+<ul>
+<li>[https://findpwa.com/about]</li>
+<li>[https://appsco.pe/]</li>
+<li>[https://pwa.bar/]</li>
+</ul>
+</article>
+<article>
+<hr>
+<h3 id="primary-tools">PRIMARY TOOLS</h3>
+<p>Programmierwerkzeuge</p>
+<ul>
+<li>HTML, CSS, JS sind Grund-Technologien</li>
+</ul>
+<p>Entwicklungsumgebung nach Wahl</p>
+<ul>
+<li>hier im Kurs: VSCode</li>
+</ul>
+<p>Ein Web-Server (Local Server)</p>
+<ul>
+<li>z.B. 'Web Server for Chrome' (PWA  &amp; Browser-Erweiterung) <a href="https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb">dieses Tool in Google Webstore</a>
+<ul>
+<li>PWA-Teil vom Tool unter chrome://apps</li>
+<li>Erweiterungsteil vom Tool unter chrome://extensions</li>
+</ul>
+</li>
+<li>oder 'Live Server' (VSCode Erweiterung &amp; Browser-Erweiterung) <a href="https://ritwickdey.github.io/vscode-live-server/">dieses Tool auf GitHub</a></li>
+</ul>
+<p>Entwickler-Werkzeuge vom Browser <a href="https://developers.google.com/web/tools/chrome-devtools/progressive-web-apps">PWA Tools in Chrome</a></p>
+<ul>
+<li>DevTools &gt; Lighthouse &gt; PWA Abschnitt</li>
+<li>DevTools &gt; Network</li>
+</ul>
+</article>
+<article>
+<hr>
+<h3 id="dev-workflow">DEV WORKFLOW</h3>
+<ol>
+<li>Schreiben vom Manifest</li>
+<li>Entwicklung von App-Shell (Anwendungshülle)</li>
+<li>Entwicklung vom ServiceWorker</li>
+</ol>
+<p>optional:</p>
+<ol>
+<li>Umsetzen von Push-Notifications</li>
+</ol>
+<p>an HTTPS entweder beim Erstellen oder beim Veröffentlichen der App denken (HTTP ist nur mit localhost möglich)</p>
+<!-- todo #14 -->
+</article>
+<article>
+<hr>
+<h4 id="back-to-readme">back to readme</h4>
+</article>
+</section>
+<!-- //////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////// -->
+<section class="page">
+<article>
+<h2 id="fetch-api">FETCH API</h2>
+<hr>
+<p><a href="#fetch--idea">#FETCH &gt; IDEA</a></p>
+<p><a href="#fetch--links">FETCH &gt; LINKS</a></p>
+<p><a href="#fetch--js">FETCH &gt; JS</a></p>
+</article>
+<article>
+<hr>
+<h3 id="fetch--idea">#FETCH &gt; IDEA</h3>
+<p>WOZU IST FETCH API</p>
+<ul>
+<li>um Netzwerk-Anfragen zu erstellen</li>
+<li>um die veraltete XMLHttpRequest-Technologie in den meinsten Fällen zu ersetzen</li>
+</ul>
+<pre class="hljs"><code><div>fetch(<span class="hljs-string">'https://jsonplaceholder.typicode.com/todos/1'</span>)
+  .then(<span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> response.json())
+  .then(<span class="hljs-function"><span class="hljs-params">json</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(json))
+</div></code></pre>
+</article>
+<article>
+<hr>
+<h3 id="fetch--links">FETCH &gt; LINKS</h3>
+<p>DOKUMENTATION</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">bei MDN</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch">bei MDN, Anleitung</a></li>
+<li><a href="https://developers.google.com/web/updates/2015/03/introduction-to-fetch">bei GDevelopers</a></li>
+</ul>
+<p>TOOLS</p>
+<ul>
+<li>Postman (standalone App)</li>
+<li>RESTClient (VSCode Erweiterung von Huachao Mao) - gleich wie Postman, aber direkt in VSCode</li>
+</ul>
+<p>SPEZIFIKATION</p>
+<ul>
+<li><a href="https://fetch.spec.whatwg.org/">von WHATWG, Living Standard</a></li>
+</ul>
+</article>
+<article>
+<hr>
+<h3 id="fetch--js">FETCH &gt; JS</h3>
+<p>Konzept von Fetch ist bei JS durch die Funktion <code>fetch()</code> realisiert, die im globalen Scope aufgerufen werden kann.</p>
+<p>Folgende Interfaces / Objekte gehören dazu:</p>
+<ul>
+<li>Request <a href="https://developer.mozilla.org/en-US/docs/Web/API/Request">MDN docs</a></li>
+<li>Response <a href="https://developer.mozilla.org/en-US/docs/Web/API/Response">MDN docs</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#Response_objects">MDN docs</a></li>
+<li>Headers <a href="https://developer.mozilla.org/en-US/docs/Web/API/Headers">MDN docs</a></li>
+<li>Body <a href="https://developer.mozilla.org/en-US/docs/Web/API/Body">MDN docs</a></li>
+</ul>
+</article>
+<article class="hidden">
+<hr>
+<h3 id="fetch--polyfills">FETCH &gt; POLYFILLS</h3>
+<p>Bei den älteren Browsern, die die Fetch-API nicht unterstützen, können Fetch-Polyfills genutzt werden</p>
+<ul>
+<li>https://www.npmjs.com/package/cross-fetch</li>
+<li>https://redux.js.org/advanced/async-actions#note-on-fetch</li>
+<li>We use fetch API in the examples. It is a new API for making network requests that replaces XMLHttpRequest for most common needs. Because most browsers don't yet support it natively, we suggest that you use cross-fetch library</li>
+<li>Internally, it uses whatwg-fetch polyfill on the client, and node-fetch on the server, so you won't need to change API calls if you change your app to be universal.</li>
+<li>Be aware that any fetch polyfill assumes a Promise polyfill is already present. The easiest way to ensure you have a Promise polyfill is to enable Babel's ES6 polyfill in your entry point before any other code runs:</li>
+</ul>
+</article>
+<article>
+<hr>
+<h4 id="back-to-readme">back to readme</h4>
+</article>
+</section>
+<!-- //////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////// -->
+<section class="page">
+<h2 id="browser-storage">BROWSER-STORAGE</h2>
+<article>
+<hr>
+<p>die ersten 2 sind für PWA wichtig</p>
+<p><a href="#browser-storage-overview">BROWSER STORAGE OVERVIEW</a></p>
+<p><a href="#cache-storage--idea">#CACHE-STORAGE &gt; IDEA</a></p>
+<p><a href="#cache--links">CACHE &gt; LINKS</a></p>
+<p><a href="#cache--javascript">CACHE &gt; JAVASCRIPT</a></p>
+<p><a href="#idea-of-web-storage">IDEA OF #WEB-STORAGE</a></p>
+<p><a href="#web-storage--links">WEB STORAGE &gt; LINKS</a></p>
+<p><a href="#idea-of-local-storage">IDEA OF #LOCAL-STORAGE</a></p>
+<p><a href="#local-storage--links">LOCAL STORAGE &gt; LINKS</a></p>
+<p><a href="#idea-of-session-storage">IDEA OF #SESSION-STORAGE</a></p>
+<p><a href="#session-storage--links">SESSION STORAGE &gt; LINKS</a></p>
+<p><a href="#idea-of-indexed-db">IDEA OF #INDEXED-DB</a></p>
+<p><a href="#indexed-db--links">INDEXED DB &gt; LINKS</a></p>
+<p><a href="#idea-of-cookies">IDEA OF #COOKIES</a></p>
+<p><a href="#cookies--links">COOKIES &gt; LINKS</a></p>
+</article>
+<article>
+<hr>
+<h3 id="browser-storage-overview">BROWSER STORAGE OVERVIEW</h3>
+<p>Unter dem Begriff 'Browser Storage' werden Speichermöglichkeiten durch einen Browser gemeint:</p>
+<ul>
+<li>Cache Storage</li>
+<li>Local Storage</li>
+<li>Session Storage</li>
+<li>IndexedDB</li>
+<li>Cookies</li>
+</ul>
+<p>Für PWA spielt Cache eine besondere Rolle</p>
+<!-- todo #15 -->
+<!-- todo #16 -->
+</article>
+<article>
+<hr>
+<h3 id="cache-storage--idea">#CACHE-STORAGE &gt; IDEA</h3>
+<p>WAS IST CACHE STORAGE</p>
+<ul>
+<li>Interface (Objekt) in JS</li>
+</ul>
+<p>WOZU IST CACHE STORAGE</p>
+<ul>
+<li>um Master-Pfad für alle benannte Cache-Objekte zu gewähren, die erreichbar sind für
+<ul>
+<li>ein ServiceWorker</li>
+<li>ein anderer Worker</li>
+<li>window scope (Cache Storage kann auch ohne (Service)Worker genutzt werden)</li>
+</ul>
+</li>
+<li>um Mapping von String-Namen zu den entsprechenden Cache-Objekten zu verwalten</li>
+</ul>
+</article>
+<article>
+<hr>
+<h3 id="cache-storage--links">CACHE STORAGE &gt; LINKS</h3>
+<p>DOKUMENTATION</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage">Cache Storage auf MDN</a></li>
+</ul>
+<p>TOOLS</p>
+<ul>
+<li>Chrome DevTools &gt; Application &gt; Cache
+<ul>
+<li>Anleitung [https://developers.google.com/web/tools/chrome-devtools/storage/cache]</li>
+</ul>
+</li>
+<li>Firefox Developer Tools &gt; Storage (dt.: Web-Speicher) &gt; Cache
+<ul>
+<li>Anleitung [https://developer.mozilla.org/en-US/docs/Tools/Storage_Inspector]</li>
+</ul>
+</li>
+</ul>
+<p>SPEZIFIKATION</p>
+<ul>
+<li>Das Cache-Konzept ist Teil der Service-Worker-Spezifikation (das bedeutet nicht, dass es nur zusammen mit SW genutzt werden kann)
+<ul>
+<li>[https://w3c.github.io/ServiceWorker/#cache-objects]</li>
+</ul>
+</li>
+</ul>
+<!-- todo #17 -->
+</article>
+<article>
+<hr>
+<h3 id="cache--javascript">CACHE &gt; JAVASCRIPT</h3>
+<p>In JavaScript ist das Cache-Konzept realisiert durch:</p>
+<ul>
+<li>
+<p>die Eigenschaft 'caches' vom Objekt 'window' (einfach caches z.B. in der Console eingeben)</p>
+</li>
+<li>
+<p>Objekt 'CacheStorage'</p>
+</li>
+<li>
+<p>Objekt 'Cache'</p>
+</li>
+<li>
+<p>(Objekt 'ApplicationCache' ist veraltet)</p>
+</li>
+<li>
+<p>die Eigenschaft 'caches' liefert beim Aufruf das Objekt 'CacheStorage'</p>
+</li>
+<li>
+<p>Members:</p>
+<ul>
+<li>delete()</li>
+<li>has()</li>
+<li>keys()</li>
+<li>match()</li>
+<li>open()</li>
+</ul>
+</li>
+<li>
+<p>CacheStorage ist vom Objekt 'Object' abgeleitet</p>
+</li>
+<li>
+<p>Dokumentation [https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage]</p>
+</li>
+<li>
+<p>Methode 'open()' von 'CacheStorage' liefert ein Promise, welches sich zum Objekt 'Cache' auflöst</p>
+</li>
+<li>
+<p>Members von 'Cache'</p>
+<ul>
+<li>add()</li>
+<li>addAll() <!-- todo #18 --></li>
+<li>delete()</li>
+<li>keys()</li>
+<li>match()</li>
+<li>matchAll()</li>
+<li>put()</li>
+</ul>
+</li>
+<li>
+<p>Cache ist vom Objekt 'Object' abgeleitet</p>
+</li>
+<li>
+<p>Dokumentation [https://developer.mozilla.org/en-US/docs/Web/API/Cache#Methods]</p>
+</li>
+</ul>
+</article>
+<article class="hidden">
+<!--
+
+-----------------------------------------------------------------
+
+### KAPITEL-NAME - APPLICATIONCACHE deprecated! ###
+
+- ABLEITUNG: Object > EventTarget > ApplicationCache
+- MEMBERS:
+  - CHECKING
+  - DOWNLOADING
+  - IDLE
+  - OBSOLETE
+  - UNCACHED
+  - UPDATEREADY
+  - abort()
+  - oncached
+  - onchecking
+  - ondownloading
+  - onerror
+  - onnoupdate
+  - onobsolete
+  - onprogress
+  - onupdateready
+  - status
+  - swapCache()
+  - update()
+
+-->
+<!-- 
+NOTIZEN ZUR FOLIE-21
+
+https://developer.mozilla.org/en-US/docs/Web/API/Window/applicationCache
+https://developers.google.com/web/tools/chrome-devtools/storage/applicationcache?utm_source=devtools
+
+-->
+</article>
+<article>
+<hr>
+<h3 id="idea-of-web-storage">IDEA OF #WEB-STORAGE</h3>
+<p>WAS IST WEB STORAGE</p>
+<p>WOZU IST WEB STORAGE</p>
+</article>
+<article>
+<hr>
+<h3 id="web-storage--links">WEB STORAGE &gt; LINKS</h3>
+<p>Local Storage und Session Storage sind Teile von Web Storage API</p>
+<p>DOKUMENTATION</p>
+<ul>
+<li>Storage Interface
+<ul>
+<li>[https://developer.mozilla.org/en-US/docs/Web/API/Storage]</li>
+<li>[https://developer.mozilla.org/de/docs/Web/API/Storage]</li>
+</ul>
+</li>
+<li>Web Storage API
+<ul>
+<li>[https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API]</li>
+</ul>
+</li>
+</ul>
+<p>SPEZIFIKATION</p>
+<ul>
+<li>[https://html.spec.whatwg.org/multipage/webstorage.html]</li>
+</ul>
+</article>
+<article>
+<hr>
+<h3 id="idea-of-local-storage">IDEA OF #LOCAL-STORAGE</h3>
+<p>WAS IST LOCAL STORAGE</p>
+<p>WOZU IST LOCAL STORAGE</p>
+</article>
+<article>
+<hr>
+<h3 id="local-storage--links">LOCAL STORAGE &gt; LINKS</h3>
+<p>DOKUMENTATION</p>
+<ul>
+<li>[https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage]</li>
+</ul>
+<p>TOOLS</p>
+<ul>
+<li>Chrome DevTools &gt; Application &gt; Local Storage
+<ul>
+<li>Anleitung [https://developers.google.com/web/tools/chrome-devtools/storage/localstorage]</li>
+</ul>
+</li>
+<li>Firefox Developer Tools &gt; Storage (dt.: Web-Speicher) &gt; Local Storage
+<ul>
+<li>Anleitung [https://developer.mozilla.org/en-US/docs/Tools/Storage_Inspector]</li>
+</ul>
+</li>
+</ul>
+<p>SPEZIFIKATION</p>
+<ul>
+<li>Local Storage API ist zusammen mit IndexedDB API und showNotifications() API in der einzelnen Spezifikation standardisiert
+<ul>
+<li>[https://storage.spec.whatwg.org/]</li>
+</ul>
+</li>
+<li>'localStorage getter' in der Web-Storage-Spezifikation
+<ul>
+<li>[https://html.spec.whatwg.org/multipage/webstorage.html]</li>
+</ul>
+</li>
+</ul>
+</article>
+<article>
+<hr>
+<h3 id="idea-of-session-storage">IDEA OF #SESSION-STORAGE</h3>
+<p>WAS IST SESSION STORAGE</p>
+<p>WOZU IST SESSION STORAGE</p>
+</article>
+<article>
+<hr>
+<h3 id="session-storage--links">SESSION STORAGE &gt; LINKS</h3>
+<p>DOKUMENTATION</p>
+<ul>
+<li>[https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage]</li>
+</ul>
+<p>TOOLS</p>
+<ul>
+<li>Chrome DevTools &gt; Application &gt; Session Storage
+<ul>
+<li>Anleitung [https://developers.google.com/web/tools/chrome-devtools/storage/sessionstorage]</li>
+</ul>
+</li>
+<li>Firefox Developer Tools &gt; Storage (dt.: Web-Speicher) &gt; Indexed DB
+<ul>
+<li>Anleitung [https://developer.mozilla.org/en-US/docs/Tools/Storage_Inspector]</li>
+</ul>
+</li>
+</ul>
+<p>SPEZIFIKATION</p>
+<ul>
+<li>'sessionStorage getter' in der Web-Storage-Spezifikation
+<ul>
+<li>[https://html.spec.whatwg.org/multipage/webstorage.html]</li>
+</ul>
+</li>
+</ul>
+</article>
+<article>
+<hr>
+<h3 id="idea-of-indexed-db">IDEA OF #INDEXED-DB</h3>
+<p>WAS IST INDEXED DB</p>
+<p>WOZU IST INDEXED DB</p>
+</article>
+<article>
+<hr>
+<h3 id="indexed-db--links">INDEXED DB &gt; LINKS</h3>
+<p>DOKUMENTATION</p>
+<ul>
+<li>[https://developer.mozilla.org/de/docs/Web/API/WindowOrWorkerGlobalScope/indexedDB]</li>
+</ul>
+<p>TOOLS</p>
+<ul>
+<li>Chrome DevTools &gt; Application &gt; Indexed DB
+<ul>
+<li>Anleitung [https://developers.google.com/web/tools/chrome-devtools/storage/indexeddb]</li>
+</ul>
+</li>
+<li>Firefox Developer Tools &gt; Storage (dt.: Web-Speicher) &gt; Indexed DB
+<ul>
+<li>Anleitung [https://developer.mozilla.org/en-US/docs/Tools/Storage_Inspector]</li>
+</ul>
+</li>
+</ul>
+<p>SPEZIFIKATION</p>
+<ul>
+<li>Local Storage API ist zusammen mit IndexedDB API und showNotifications() API in der einzelnen Spezifikation standardisiert
+<ul>
+<li>[https://storage.spec.whatwg.org/]</li>
+</ul>
+</li>
+</ul>
+</article>
+<article>
+<hr>
+<h3 id="idea-of-cookies">IDEA OF #COOKIES</h3>
+<p>WAS SIND COOKIES</p>
+<p>WOZU SIND COOKIES</p>
+<!-- 
+NOTIZEN ZUR FOLIE-30
+-->
+</article>
+<article>
+<hr>
+<h3 id="cookies--links">COOKIES &gt; LINKS</h3>
+<p>DOKUMENTATION</p>
+<ul>
+<li>[https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie]</li>
+<li>[https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies]</li>
+</ul>
+<p>TOOLS</p>
+<ul>
+<li>Chrome DevTools &gt; Application &gt; Cookies
+<ul>
+<li>Anleitung [https://developers.google.com/web/tools/chrome-devtools/storage/cookies]</li>
+</ul>
+</li>
+<li>Firefox Developer Tools &gt; Storage (dt.: Web-Speicher) &gt; Cookies
+<ul>
+<li>Anleitung [https://developer.mozilla.org/en-US/docs/Tools/Storage_Inspector]</li>
+</ul>
+</li>
+</ul>
+<p>SPEZIFIKATION</p>
+<ul>
+<li>[https://tools.ietf.org/html/draft-west-cookie-prefixes-05]</li>
+<li>obsolete [https://www.w3.org/TR/DOM-Level-2-HTML/html.html#ID-8747038]</li>
+</ul>
+<!--
+[8](pwa-notes.md#8)
+-->
+</article>
+<article>
+<hr>
+<h4 id="back-to-readme">back to readme</h4>
+</article>
+</section>
+<!-- //////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////// -->
+<section class="page">
+<article>
+<h2 id="caching-strategies">CACHING STRATEGIES</h2>
+<hr>
+<p><a href="#offline-app">OFFLINE APP</a></p>
+<p><a href="#idea-of-app-shell">IDEA OF #APP-SHELL</a></p>
+<p><a href="#offline-pattern">OFFLINE PATTERN</a></p>
+<p><a href="#bad-offline-pattern">BAD OFFLINE PATTERN</a></p>
+<!--
+[n](pwa-notes.md#n)
+-->
+</article>
+<article>
+<hr>
+<h3 id="offline-app">OFFLINE APP</h3>
+<p>Progressive Web Apps verfolgen konsequent einen Offline-first-Ansatz</p>
+<p>OFFLINE</p>
+<ul>
+<li>keine 404-Status-Seite (z.B. Dinosaurier-Spiel in Chrome), sondern</li>
+<li>eine einfache offline-Seite oder</li>
+<li>Interaktion mit der App ohne Änderung der gecachten Daten oder</li>
+<li>Interaktion mit der App mit Änderung der Daten und Synchronisierung beim nächsten Internet-Zugang</li>
+</ul>
+<p>BEISPIEL</p>
+<ul>
+<li>https://www.trivago.com/offline</li>
+</ul>
+<!--
+[3](pwa-notes.md#3)
+-->
+</article>
+<article>
+<hr>
+<h3 id="idea-of-app-shell">IDEA OF #APP-SHELL</h3>
+<p>WAS IST APP SHELL</p>
+<ul>
+<li>eine von Möglichkeiten (Architekturmodel) für PWA</li>
+<li>das minimale HTML, CSS und JS für das korrekte Laufen des UI</li>
+<li>wird den Daten / dem Inhalt gegenüber gestellt</li>
+</ul>
+<p>WOZU IST APP SHELL</p>
+<ul>
+<li>um die Ladezeit der Anwendung zu reduzieren (Shell ist immer im Cache)</li>
+<li>um das UI von den Daten zu trennen</li>
+</ul>
+<!--
+[9](pwa-notes.md#9)
+-->
+</article>
+<article>
+<hr>
+<h3 id="offline-pattern">OFFLINE PATTERN</h3>
+<ul>
+<li>cache-first network</li>
+<li>server-first network</li>
+<li>pre-cache</li>
+<li>offline page</li>
+<li>offline copy of pages</li>
+<li>offline copy with backup offline page</li>
+<li>background sync</li>
+<li>serving cached media</li>
+<li>Kombination von den erwähnten Szenarios</li>
+</ul>
+<p>Hier kann man nachschauen, welche Szenarios es noch gibt und wie diese realisiert sind</p>
+<ul>
+<li>[https://developers.google.com/web/tools/workbox/guides/common-recipes]</li>
+<li>[https://developers.google.com/web/tools/workbox/guides/advanced-recipes]</li>
+<li>[https://serviceworke.rs/caching-strategies.html]</li>
+<li>[https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching]</li>
+</ul>
+<!--
+[10](pwa-notes.md#10)
+-->
+</article>
+<article>
+<hr>
+<h3 id="bad-offline-pattern">BAD OFFLINE PATTERN</h3>
+<ul>
+<li>caching everything</li>
+<li>no update mechanism for cached things</li>
+</ul>
+</article>
+<article>
+<hr>
+<h4 id="back-to-readme">back to readme</h4>
+</article>
+</section>
+<!-- //////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////// -->
+<section class="page">
+<article>
+<h2 id="service-worker">SERVICE-WORKER</h2>
+<hr>
+<p><a href="#service-worker--idea">SERVICE-WORKER &gt; IDEA</a></p>
+<p><a href="#service-worker--pwa">SERVICE WORKER &amp; PWA</a></p>
+<p><a href="#service-worker--links">SERVICE WORKER &gt; LINKS</a></p>
+<p><a href="#service-worker--javascript">SERVICE WORKER &gt; JAVASCRIPT</a></p>
+<p><a href="#service-worker-container">SERVICE WORKER CONTAINER</a></p>
+<p><a href="#service-worker-registration">SERVICE WORKER REGISTRATION</a></p>
+<p><a href="#service-worker--scope">SERVICE WORKER &gt; SCOPE</a></p>
+<p><a href="#service-worker--lifecycle">SERVICE WORKER &gt; LIFECYCLE</a></p>
+<p><a href="#service-worker--fetch-event">SERVICE WORKER &gt; FETCH EVENT</a></p>
+<p><a href="#service-worker--fetch-request">SERVICE WORKER &gt; FETCH REQUEST</a></p>
+<p><a href="#service-worker--first-initialization">SERVICE WORKER &gt; FIRST INITIALIZATION</a></p>
+<p><a href="#service-worker-global-scope">SERVICE WORKER GLOBAL SCOPE</a></p>
+<p><a href="#service-worker--tools">SERVICE WORKER &gt; TOOLS</a></p>
+</article>
+<article>
+<hr>
+<h3 id="service-worker--idea">#SERVICE-WORKER &gt; IDEA</h3>
+<p>WAS IST EIN SERVICE WORKER</p>
+<ul>
+<li>STRENG GESEHEN:
+<ul>
+<li>ein JS-Objekt (Interface)</li>
+<li>abgeleitet von Worker</li>
+<li>läuft nicht im Gültigkeitsbereich von Window, sondern im windoworworkerglobalscope</li>
+</ul>
+</li>
+<li>IM ÜBERTRAGENEN SINNE:
+<ul>
+<li>eine JS-Datei, die als Service Worker beim Objekt 'navigator.serviceWorker' registriert wird</li>
+</ul>
+</li>
+<li>ein Proxy zwischen der Anwendung und dem Server</li>
+<li>nur mit HTTPS möglich, nicht mit HTTP*</li>
+<li>liegt im Ordner 'public'</li>
+</ul>
+<p>WOZU IST EIN SERVICE WORKER</p>
+<ul>
+<li>um die Abhängigkeit der App vom Netzwerk zu reduzieren (SW steuert die HTTPS-Requests)
+offline-Verfügbarkeit zu gewähren (Kontrolle über die Anwendung und start_url)</li>
+<li>um die Web-Anwendung zum Startbildschirm auf mobilen Geräten hinzufügen zu können</li>
+<li>um die Web-Anwendung auf dem Desktop-Rechner installieren zu können</li>
+<li>um die Push-Benachrichtigungen zu ermöglichen</li>
+</ul>
+<!--
+[11](pwa-notes.md#11)
+-->
+</article>
+<article>
+<hr>
+<h3 id="service-worker--pwa">SERVICE WORKER &amp; PWA</h3>
+<ul>
+<li>Es stellt für Progressive Web Apps essentielle Funktionen wie das Caching für die Offline-Verwendbarkeit bereit.</li>
+<li>Ein Service Worker ist ein JavaScript, das ein Web-Browser im Hintergrund ausführt.</li>
+<li>Service Worker werden eigens programmiert, im JavaScript der Seite registriert und installiert.</li>
+<li>Auch von nativen Apps bekannte Push-Benachrichtigungen sind mit Service Workern möglich.</li>
+<li>Service Worker bedingen HTTPS, weshalb jede Progressive Web App mit HTTPS läuft.</li>
+</ul>
+<!--
+[12](pwa-notes.md#12)
+-->
+</article>
+<article>
+<hr>
+<h3 id="service-worker--links">SERVICE WORKER &gt; LINKS</h3>
+<p>DOKUMENTATION (MDN)</p>
+<ul>
+<li>[https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API]</li>
+<li>[https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker]</li>
+</ul>
+<p>TOOLS</p>
+<ul>
+<li>Zum Entwickeln und Üben [https://serviceworke.rs/]</li>
+<li>Statistik von Websites mit Service Worker [https://www.chromestatus.com/metrics/feature/timeline/popularity/990]</li>
+<li>Chrome DevTools [https://developers.google.com/web/tools/chrome-devtools/progressive-web-apps#service-workers]</li>
+</ul>
+<p>ANLEITUNG</p>
+<ul>
+<li>MDN (von Mozilla Foundation) [https://developer.mozilla.org/de/docs/Web/API/Service_Worker_API/Using_Service_Workers]</li>
+<li>GDevelopers [https://developers.google.com/web/fundamentals/primers/service-workers/]</li>
+<li>W3C [https://w3c.github.io/ServiceWorker/#algorithms]</li>
+</ul>
+<p>SPEC</p>
+<ul>
+<li>[https://w3c.github.io/ServiceWorker]</li>
+</ul>
+<!--
+[13](pwa-notes.md#13)
+-->
+</article>
+<article>
+<hr>
+<h3 id="service-worker--javascript">SERVICE WORKER &gt; JAVASCRIPT</h3>
+<p>In JavaScript ist das Service-Worker-Konzept durch folgende JS-Objekte realisiert</p>
+<ul>
+<li>ServiceWorkerContainer</li>
+<li>ServiceWorker</li>
+<li>ServiceWorkerRegistration</li>
+<li>InstallEvent</li>
+<li>ActivateEvent</li>
+<li>FetchEvent</li>
+<li>ExtendableEvent</li>
+<li>ExtendableMessageEvent</li>
+<li>ServiceWorkerGlobalScope</li>
+<li>Client</li>
+<li>Clients</li>
+</ul>
+</article>
+<article>
+<hr>
+<h3 id="service-worker-container">SERVICE WORKER CONTAINER</h3>
+<p>'navigator.serviceWorker' liefert folgendes Objekt:</p>
+<ul>
+<li>ServiceWorkerContainer
+<ul>
+<li>controller</li>
+<li>getRegistration()</li>
+<li>getRegistrations()</li>
+<li>oncontrollerchange</li>
+<li>onmessage</li>
+<li>onmessageerror</li>
+<li>ready</li>
+<li>register(): Promise<code>&lt;ServiceWorkerRegistration&gt;</code></li>
+<li>startMessages()</li>
+</ul>
+</li>
+</ul>
+</article>
+<article>
+<hr>
+<h3 id="service-worker-registration">SERVICE WORKER REGISTRATION</h3>
+<p>Promise<code>&lt;ServiceWorkerRegistration&gt;</code></p>
+<p>Ableitung: Object &gt; EventTarget &gt; ServiceWorkerRegistration</p>
+<p>Members:</p>
+<ul>
+<li>active</li>
+<li>backgroundFetch</li>
+<li>getNotifications()</li>
+<li>installing</li>
+<li>navigationPreload</li>
+<li>onupdatefound</li>
+<li>paymentManager</li>
+<li>periodicSync</li>
+<li>pushManager</li>
+<li>scope</li>
+<li>showNotification()</li>
+<li>sync</li>
+<li>unregister()</li>
+<li>update()</li>
+<li>updateViaCache</li>
+<li>waiting</li>
+</ul>
+<!--
+[14](pwa-notes.md#14)
+-->
+</article>
+<article>
+<hr>
+<h3 id="service-worker--scope">SERVICE WORKER &gt; SCOPE</h3>
+<ul>
+<li>Gültigkeitsbereich vom Service Worker - welche Dateien werden über ihn kontrolliert</li>
+<li>Root Ordner oder Unterordner im Projekt der Anwendung</li>
+<li>Default-Gültigkeitsbereich ist der Ort, wo die SW-Datei liegt</li>
+<li>Alle Unterordner sind auch in diesem Gültigkeitsbereich</li>
+<li>Wenn die Datei 'sw.js' im Root-Ordner liegt, dann kontrolliert der Service Worker die Anfragen (Requests) von allen Webseiten dieser Domäne</li>
+<li>Scope vom SW soll auch Scope vom Manifest und Start URL beinhalten</li>
+</ul>
+<!--
+[15](pwa-notes.md#15)
+-->
+</article>
+<article>
+<hr>
+<h3 id="service-worker--lifecycle">SERVICE WORKER &gt; LIFECYCLE</h3>
+<ul>
+<li>
+<p>Unter Lebenszyklus werden die Ereignisse gemeint, auf die ein Service Worker zuhört:</p>
+<ul>
+<li>install</li>
+<li>activate</li>
+<li>fetch</li>
+</ul>
+</li>
+<li>
+<p>Durch ServiceWorkerRegistration-Objekt kann man auch die Zustände vom ServiceWorker abfragen</p>
+</li>
+<li>
+<p>Anleitung von GDevelopers</p>
+<ul>
+<li>[https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle]</li>
+</ul>
+</li>
+</ul>
+<!--
+[16](pwa-notes.md#16)
+-->
+</article>
+<article>
+<hr>
+<h3 id="service-worker--fetch-event">SERVICE WORKER &gt; FETCH EVENT</h3>
+<pre class="hljs"><code><div>self.addEventListener(<span class="hljs-string">'fetch'</span>, evt =&gt; {
+    <span class="hljs-comment">// Fetch-Event abfangen</span>
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'SW: Fetch, event.request: '</span>, evt.request);
+</div></code></pre>
+<!-- 
+NOTIZEN ZUR FOLIE-45
+-->
+</article>
+<article>
+<hr>
+<h3 id="service-worker--fetch-request">SERVICE WORKER &gt; FETCH REQUEST</h3>
+<p>fetch event &gt; request</p>
+<pre class="hljs"><code><div>bodyUsed: <span class="hljs-literal">false</span>
+<span class="hljs-attr">cache</span>: <span class="hljs-string">"default"</span>
+<span class="hljs-attr">credentials</span>: <span class="hljs-string">"omit"</span>
+<span class="hljs-attr">destination</span>: <span class="hljs-string">"empty"</span>
+<span class="hljs-attr">headers</span>: Headers {}
+<span class="hljs-attr">integrity</span>: <span class="hljs-string">""</span>
+<span class="hljs-attr">isHistoryNavigation</span>: <span class="hljs-literal">false</span>
+<span class="hljs-attr">keepalive</span>: <span class="hljs-literal">false</span>
+<span class="hljs-attr">method</span>: <span class="hljs-string">"GET"</span>
+<span class="hljs-attr">mode</span>: <span class="hljs-string">"cors"</span>
+<span class="hljs-attr">redirect</span>: <span class="hljs-string">"follow"</span>
+<span class="hljs-attr">referrer</span>: <span class="hljs-string">"http://127.0.0.1:8887/"</span>
+<span class="hljs-attr">referrerPolicy</span>: <span class="hljs-string">"no-referrer-when-downgrade"</span>
+<span class="hljs-attr">signal</span>: AbortSignal {<span class="hljs-attr">aborted</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">onabort</span>: <span class="hljs-literal">null</span>}
+<span class="hljs-attr">url</span>: <span class="hljs-string">"http://127.0.0.1:8887/manifest.json"</span>
+</div></code></pre>
+<pre class="hljs"><code><div>__proto__: Request
+<span class="hljs-attr">arrayBuffer</span>: ƒ arrayBuffer()
+<span class="hljs-attr">blob</span>: ƒ blob()
+<span class="hljs-attr">bodyUsed</span>: (...)
+<span class="hljs-attr">cache</span>: (...)
+<span class="hljs-attr">clone</span>: ƒ clone()
+<span class="hljs-attr">credentials</span>: (...)
+<span class="hljs-attr">destination</span>: (...)
+<span class="hljs-attr">formData</span>: ƒ formData()
+<span class="hljs-attr">headers</span>: (...)
+<span class="hljs-attr">integrity</span>: (...)
+<span class="hljs-attr">isHistoryNavigation</span>: (...)
+<span class="hljs-attr">json</span>: ƒ json()
+<span class="hljs-attr">keepalive</span>: (...)
+<span class="hljs-attr">method</span>: (...)
+<span class="hljs-attr">mode</span>: (...)
+<span class="hljs-attr">redirect</span>: (...)
+<span class="hljs-attr">referrer</span>: (...)
+<span class="hljs-attr">referrerPolicy</span>: (...)
+<span class="hljs-attr">signal</span>: (...)
+<span class="hljs-attr">text</span>: ƒ text()
+<span class="hljs-attr">url</span>: (...)
+</div></code></pre>
+<p>Abgeleitet von Object</p>
+<!--
+[17](pwa-notes.md#17)
+-->
+</article>
+<article>
+<hr>
+<h3 id="service-worker--first-initialization">SERVICE WORKER &gt; FIRST INITIALIZATION</h3>
+<ul>
+<li>in der separaten Service-Worker-Datei (z.B. sw.js):
+-- self.skipWaiting()
+-- self.clients.claim()</li>
+</ul>
+<p>-- Verwendet man in dem Handler für Install-Event die Methode self.skipWaiting() und im Handler für Activate-Event self.clients.claim(), übernimmt der Service Worker sofort die Kontrolle
+-- Wenn man einen Service Worker schon früher aktiviert hatte, so kann man auf diese Weise auch die Aktivierung von einem neueren Service Worker durchführen</p>
+<ul>
+<li>Durch 'self' wird das ServiceWorkerGlobalScope-Objekt angesprochen</li>
+</ul>
+<!--
+[18](pwa-notes.md#18)
+-->
+</article>
+<article>
+<hr>
+<h3 id="service-worker-global-scope">SERVICE WORKER GLOBAL SCOPE</h3>
+<p>Durch 'self' in einem Event-Handler in der Datei 'sw.js' wird das ServiceWorkerGlobalScope-Objekt angesprochen</p>
+<p>Members:</p>
+<ul>
+<li>clients</li>
+<li>registration</li>
+<li>serviceWorker</li>
+<li>skipWaiting()</li>
+<li>oninstall</li>
+<li>onactivate</li>
+<li>onfetch</li>
+<li>onmessage</li>
+<li>onmessageerror</li>
+</ul>
+</article>
+<article class="hidden">
+<!--
+[19](pwa-notes.md#19)
+-->
+</article>
+<article>
+<hr>
+<h3 id="service-worker--tools">SERVICE WORKER &gt; TOOLS</h3>
+<p>Zahlreiche Frameworks, wie z. B. Angular mit dem Mobile Toolkit, stellen Service Worker bereit, so dass man diese nicht selbst entwickeln muss</p>
+<p>Developing: s. PWA.pptx &gt; FRAMEWORKS &gt; WORKBOX
+[https://www.pwabuilder.com/serviceworker]
+[https://serviceworke.rs/]</p>
+<p>Managing:</p>
+<ul>
+<li>Chrome DevTools &gt; Application &gt; Service Workers*</li>
+</ul>
+<!--
+[20](pwa-notes.md#20)
+-->
+</article>
+<article>
+<hr>
+<h4 id="back-to-readme">back to readme</h4>
+</article>
+</section>
+<!-- //////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////// -->
+<section class="page">
+<article>
+<h2 id="web-app-manifest">WEB-APP-MANIFEST</h2>
+<hr>
+<p><a href="#web-app-manifest--idea">#WEB-APP-MANIFEST &gt; IDEA</a></p>
+<p><a href="#manifest--links">MANIFEST &gt; LINKS</a></p>
+<p><a href="#manifest--members">MANIFEST &gt; MEMBERS</a></p>
+<p><a href="#manifest--icons">MANIFEST &gt; ICONS</a></p>
+<p><a href="#splash-screen--idea">#SPLASH-SCREEN &gt; IDEA</a></p>
+<p><a href="#address-bar">ADDRESS BAR</a></p>
+<p><a href="#manifest--safari">MANIFEST &amp; SAFARI</a></p>
+<p><a href="#manifest--maskable-icon">MANIFEST &gt; #MASKABLE-ICON</a></p>
+</article>
+<article>
+<hr>
+<h3 id="web-app-manifest--idea">#WEB-APP-MANIFEST &gt; IDEA</h3>
+<p>WAS IST WEB APP MANIFEST <!-- todo #21 --></p>
+<ul>
+<li>eine JSON-Datei</li>
+<li>normalerweise im Ordner 'public' (Dateien, die an Client gleich geschickt werden)</li>
+<li>verlinkt in allen html-Dateien</li>
+</ul>
+<p>WOZU IST WEB APP MANIFEST</p>
+<ul>
+<li>ohne PWA, um Metadaten der Website, wie Name Beschreibung etc. zu sammeln <!-- todo #22 --></li>
+<li>bei PWA bietet Manifest zusammen mit dem Service Worker die Offline-Funktionalität an</li>
+<li>um zu kontrollieren, wie die Anwendung für den Benutzer erscheint</li>
+<li>damit die Anwendung den Status 200 auch offline schickt</li>
+<li>um thematisiertes Splash-Screen (Begrüßungsschirm) einzubauen</li>
+<li>um die Adresszeile vom Browser zu verstecken (Theme-Color Prop)</li>
+</ul>
+</article>
+<article>
+<hr>
+<h3 id="manifest--links">MANIFEST &gt; LINKS</h3>
+<p>DOKUMENTATION</p>
+<ul>
+<li>MDN [https://developer.mozilla.org/en-US/docs/Web/Manifest#Members]</li>
+<li>GDevelopers (WebDev) [https://web.dev/add-manifest/]</li>
+</ul>
+<p>TOOLS</p>
+<ul>
+<li>Generator [https://app-manifest.firebaseapp.com/]</li>
+<li>Visualisierung mit weiterführenden Links
+<ul>
+<li>Chrome DevTools &gt; Application &gt; Manifest [https://developers.google.com/web/tools/chrome-devtools/progressive-web-apps#manifest]</li>
+</ul>
+</li>
+</ul>
+<p>SPEZIFIKATION</p>
+<ul>
+<li>W3C Editor's Draft [https://w3c.github.io/manifest/]</li>
+<li>W3C Working Draft [https://www.w3.org/TR/appmanifest/]</li>
+</ul>
+</article>
+<article>
+<hr>
+<h3 id="manifest--members">MANIFEST &gt; MEMBERS</h3>
+<p>Auswahl</p>
+<ul>
+<li>display
+<ul>
+<li>mit dem Wert 'standalone' wird die App in einem separaten Browser-Window geöffnet</li>
+</ul>
+</li>
+<li>orientation
+<ul>
+<li>soll die App im Portrait- oder Landscape-Modus geöffnet werden</li>
+</ul>
+</li>
+<li>start_url <!-- todo #20 -->
+<ul>
+<li>welche Seite soll geöffnet werden, wenn die App startet zum ersten Mal</li>
+</ul>
+</li>
+<li>icons zusammen mit short_name
+<ul>
+<li>wie soll der verlinkte Icon im Dock (Desktop) oder im App Launcher (Smartphone) aussehen und welcher Name soll unter dem Icon stehen</li>
+</ul>
+</li>
+<li>name, icons, colors
+<ul>
+<li>definieren Splash Screen</li>
+</ul>
+</li>
+</ul>
+<p>viel mehr [https://developer.mozilla.org/en-US/docs/Web/Manifest#Members]</p>
+</article>
+<article>
+<hr>
+<h3 id="manifest--icons">MANIFEST &gt; ICONS</h3>
+<ul>
+<li>Damit die Anwendung installierbar ist, braucht Chrome die Icons mindestens in den Größen 192x192px und 512x512px. Man kann auch andere Größen hinzufügen</li>
+<li>Lädt man Bilder in einer anderen Größe hoch als bei &quot;sizes&quot; steht, sieht man in DevTools&gt;Application&gt;Manifest eine Warn-Meldung</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-string">"icons"</span>: [
+  {
+    <span class="hljs-attr">"src"</span>: <span class="hljs-string">"/assets/icon-192x192.png"</span>,
+    <span class="hljs-attr">"sizes"</span>: <span class="hljs-string">"192x192"</span>,
+    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"image/png"</span>
+  },
+  {
+    <span class="hljs-attr">"src"</span>: <span class="hljs-string">"/assets/icon-512x512.png"</span>,
+    <span class="hljs-attr">"sizes"</span>: <span class="hljs-string">"512x512"</span>,
+    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"image/png"</span>
+  }
+]
+</div></code></pre>
+<!--
+Chrome uses the icon closest to 48dp, for example, 96px on a 2x device or 144px for a 3x device.
+-->
+</article>
+<article>
+<hr>
+<h3 id="splash-screen--idea">#SPLASH-SCREEN &gt; IDEA</h3>
+<p>WAS IST SPLASH SCREEN</p>
+<ul>
+<li>Deutsch: Begrüßungsschirm</li>
+<li>Das, was der Benutzer kurz sieht, bevor die Anwendung gestartet ist</li>
+</ul>
+<p>WOZU IST SPLASH SCREEN</p>
+<ul>
+<li>um die Qualität der Benutzererfahrung zu erhöhen</li>
+<li>um die Ladezeiten (Fetch) interessant zu befüllen</li>
+</ul>
+<p>Ein minimales Splash Screen wird durch die Manifest-Eigenschaften 'name', 'icons' und 'colors' definiert.</p>
+<p><a href="https://web.dev/splash-screen/?utm_source=lighthouse&amp;utm_medium=devtools">mehr</a> <!-- todo #24 #23 --></p>
+</article>
+<article>
+<hr>
+<h3 id="address-bar">ADDRESS BAR</h3>
+<p>Mit dem Meta-Tag 'Theme-Color' kann die Adresszeile an die Stile der Anwendung angepasst werden</p>
+<p><a href="https://web.dev/themed-omnibox/?utm_source=lighthouse&amp;utm_medium=devtools">mehr</a> <!-- todo #25 --></p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"theme-color"</span>&gt;</span>
+</div></code></pre>
+</article>
+<article>
+<hr>
+<h3 id="manifest--safari">MANIFEST &amp; SAFARI</h3>
+<p>Auch mit dem Manifest ist die Anwendung für Safari nicht installierbar.</p>
+<p>Meldung: 'Does not provide a valid apple-touch-icon'</p>
+<ul>
+<li>Safari auf iOS unterstützt (noch) kein Manifest <a href="https://webkit.org/status/#specification-web-app-manifest">prüf nach</a></li>
+<li>Die Icons, Farben und App-Name werden über traditionelle meta- und link-Tags übermittelt <a href="https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html">prüf nach</a></li>
+<li>Benötigt wird mindestens ein nicht transparentes 192px (oder 180px) quadratisches PNG</li>
+<li>Anleitung [https://web.dev/apple-touch-icon/?utm_source=lighthouse&amp;utm_medium=devtools]</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"apple-mobile-web-app-capable"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"yes"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"apple-mobile-web-app-status-bar-style"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"black"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"apple-mobile-web-app-title"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Weather PWA"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"apple-touch-icon"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/images/icons/icon-152x152.png"</span>&gt;</span>
+</div></code></pre>
+</article>
+<article>
+<hr>
+<h3 id="manifest--maskable-icon">MANIFEST &gt; #MASKABLE-ICON</h3>
+<ul>
+<li>
+<p>Die Manifest-Datei sollte auch ein Maskable-Icon enthalten</p>
+</li>
+<li>
+<p>Warnmeldung in Lighthouse: 'Manifest doesn't have a maskable icon.'</p>
+</li>
+<li>
+<p>WAS IST MASKABLE ICON</p>
+<ul>
+<li>Ein Format von Icons</li>
+<li>Maskable Icon ist PWA-Begriff für Adaptive Icon</li>
+</ul>
+</li>
+<li>
+<p>WOZU IST MASKABLE ICON</p>
+<ul>
+<li>Damit alle Icons, auch mit transparentem Hintergrund, auf allen Android-Geräten wie gewünscht aussehen</li>
+<li>damit das Bild den kompletten verfügbaren Raum einnimmt (kein letterboxing entsteht)</li>
+</ul>
+</li>
+<li>
+<p>ANLEITUNG</p>
+<ul>
+<li>[https://web.dev/maskable-icon/]</li>
+<li>[https://web.dev/maskable-icon-audit/?utm_source=lighthouse&amp;utm_medium=devtools]</li>
+</ul>
+</li>
+<li>
+<p>TOOL</p>
+<ul>
+<li>[https://maskable.app/editor]</li>
+</ul>
+</li>
+</ul>
+<p><img src="imgs/F58_1.png" alt="alt text" title="icon wrong">
+<img src="imgs/F58_2.png" alt="alt text" title="icon right"></p>
+</article>
+<article>
+<hr>
+<h4 id="back-to-readme">back to readme</h4>
+</article>
+</section>
+<!-- //////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////// -->
+<section class="page">
+<article>
+<h2 id="installability">INSTALLABILITY</h2>
+<hr>
+<p><a href="#installability--criteria">INSTALLABILITY &gt; CRITERIA</a></p>
+<p><a href="#installability--beforeinstallpromptevent">INSTALLABILITY &gt; BEFOREINSTALLPROMPTEVENT</a></p>
+<p><a href="#installability--appinstalled-event">INSTALLABILITY &gt; APPINSTALLED EVENT</a></p>
+<p><a href="#installability--display-mode">INSTALLABILITY &gt; DISPLAY MODE</a></p>
+<p><a href="#installability--uninstall">INSTALLABILITY &gt; UNINSTALL</a></p>
+</article>
+<article>
+<hr>
+<h3 id="installability--criteria">INSTALLABILITY &gt; CRITERIA</h3>
+<ul>
+<li>Durch den Web-App-Manifest ist eine Web-Anwendung installierbar</li>
+<li>Auf dem Handy kann eine Progressive Web App über &quot;Add-To-Homescreen&quot;-Prompt installiert werden</li>
+<li>Dieses Dialogfenster erscheint nur, wenn ein Event 'Beforeinstallprompt' geschossen wird</li>
+<li>Dieses Event wird vom Browser ausgelöst, wenn er merkt, dass die Anwendung installierbar ist</li>
+<li>Auf dem Rechner findet man die installierte App auf dem Desktop (Start-Bildschirm) und im Browser durch die Adresse chrome://apps/</li>
+<li>Bei 'Windows-Einstellungen &gt; Apps' sind PWAs nicht aufgelistet</li>
+</ul>
+<!--
+[27](pwa-notes.md#27)
+-->
+<!-- todo #29 -->
+<!-- todo #30 -->
+</article>
+<article>
+<hr>
+<h3 id="installability--beforeinstallpromptevent">INSTALLABILITY &gt; BEFOREINSTALLPROMPTEVENT</h3>
+<p>Ableitung: Object &gt; Event &gt; BeforeInstallPrompt</p>
+<p>Members:</p>
+<ul>
+<li>bubbles</li>
+<li>cancelBubble</li>
+<li>cancelable</li>
+<li>composed</li>
+<li>currentTarget</li>
+<li>defaultPrevented</li>
+<li>eventPhase</li>
+<li>path</li>
+<li><strong>platforms</strong></li>
+<li><strong>prompt()</strong></li>
+<li>returnValue</li>
+<li>srcElement</li>
+<li>target</li>
+<li>timeStamp</li>
+<li>type</li>
+<li><strong>userChoise : Promise</strong></li>
+</ul>
+<p>Fett markiert sind die Members, die speziell für dieses Objekt sind</p>
+<!--
+[28](pwa-notes.md#28)
+-->
+</article>
+<article>
+<hr>
+<h3 id="installability--appinstalled-event">INSTALLABILITY &gt; APPINSTALLED EVENT</h3>
+<p>Wurde das Dialogfenster vom Benutzer am Anfang ignoriert, kann er die Anwendung später auch über das Drei-Punkte-Menü installieren.</p>
+<p>Da wird das Event 'appinstalled' ausgelöst.</p>
+<p>Members:</p>
+<ul>
+<li>bubbles</li>
+<li>cancelBubble</li>
+<li>cancelable</li>
+<li>composed</li>
+<li>currentTarget</li>
+<li>defaultPrevented</li>
+<li>eventPhase</li>
+<li><strong>isTrusted</strong></li>
+<li>path</li>
+<li>returnValue</li>
+<li>srcElement</li>
+<li>target</li>
+<li>timeStamp</li>
+<li>type: &quot;appinstalled&quot;</li>
+</ul>
+<!--
+[29](pwa-notes.md#29)
+-->
+</article>
+<article>
+<hr>
+<h3 id="installability--display-mode">INSTALLABILITY &gt; DISPLAY MODE</h3>
+<p>Sind für die installierten Variante der PWA besondere CSS-Stile vorgesehen, kann man das über spezielle Media-Queries abfragen</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">@media</span> all <span class="hljs-keyword">and</span> (<span class="hljs-attribute">display-mode:</span> standalone) {
+  <span class="hljs-selector-tag">body</span> {
+    <span class="hljs-attribute">background-color</span>: yellow;
+  }
+}
+</div></code></pre>
+<!--
+[30](pwa-notes.md#30)
+-->
+</article>
+<article>
+<hr>
+<h3 id="installability--uninstall">INSTALLABILITY &gt; UNINSTALL</h3>
+<p>Auf dem Rechner</p>
+<ul>
+<li>die Anwendung starten</li>
+<li>Drei-Punkte-Menü rechts oben</li>
+<li>Befehl '[App-name] deinstallieren '</li>
+</ul>
+<!--
+[31](pwa-notes.md#31)
+-->
+</article>
+<article>
+<hr>
+<h4 id="back-to-readme">back to readme</h4>
+</article>
+</section>
+<!-- //////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////// -->
+<section class="page">
+<h2 id="push-notifications">PUSH-NOTIFICATIONS</h2>
+<article>
+<hr>
+<p><a href="#push-notifications--idea">#PUSH-NOTIFICATIONS &gt; IDEA</a></p>
+<p><a href="#push-notifications--push-api">PUSH NOTIFICATIONS &gt; PUSH API</a></p>
+<p><a href="#push-notifications--notifications-api">PUSH NOTIFICATIONS &gt; NOTIFICATIONS API</a></p>
+<p><a href="#push-notifications--js">PUSH NOTIFICATIONS &amp; JS</a></p>
+<p><a href="#push-notifications--push-manager">PUSH NOTIFICATIONS &gt; PUSH MANAGER</a></p>
+<p><a href="#push-notifications--push-subscription">PUSH NOTIFICATIONS &gt; PUSH SUBSCRIPTION</a></p>
+<p><a href="#push-notifications--push-subscription-options">PUSH NOTIFICATIONS &gt; PUSH SUBSCRIPTION OPTIONS</a></p>
+<p><a href="#vapid-keys--idea">#VAPID-KEYS &gt; IDEA</a></p>
+<p><a href="#vapid-keys--application-server-key">VAPID KEYS &gt; APPLICATION SERVER KEY</a></p>
+<p><a href="#push-notifications--lab">PUSH NOTIFICATIONS &gt; LAB</a></p>
+</article>
+<article>
+<hr>
+<h3 id="push-notifications--idea">#PUSH-NOTIFICATIONS &gt; IDEA</h3>
+<ul>
+<li>
+<p>Gewöhnliche Websites (keine PWAs) und auch native Apps setzen auch diese Technologien ein</p>
+</li>
+<li>
+<p>Es kann z.B. so aussehen
+[https://web-push-book.gauntface.com/demos/notification-examples/]</p>
+</li>
+<li>
+<p>Bei PWAs spielt die Kommunikation zwischen dem Server und dem Client eine besondere Rolle</p>
+</li>
+<li>
+<p>Push-Benachrichtigungen sind dabei neben dem Service Worker und Web-App-Manifest ein Hauptwerkzeug</p>
+</li>
+<li>
+<p>Hinter den Begriffen 'push notifications' oder 'web notifications' stehen zwei separate APIs: Push API und Notifications API</p>
+</li>
+</ul>
+<!--
+[32](pwa-notes.md#32)
+-->
+</article>
+<article class="hidden">
+<!--
+
+-----------------------------------------------------------------
+
+### PWA & #PUSH-NOTIFICATIONS ###
+
+-->
+<!--
+[33](pwa-notes.md#33)
+-->
+</article>
+<article>
+<hr>
+<h3 id="push-notifications--push-api">PUSH NOTIFICATIONS &gt; PUSH API</h3>
+<p>DOKUMENTATION</p>
+<ul>
+<li>[https://developer.mozilla.org/de/docs/Web/API/Push_API]</li>
+</ul>
+<p>TOOLS</p>
+<ul>
+<li>einen Web-Server immitieren z.B. mit 'Web Server for Chrome' (Browser-Erweiterung)
+<ul>
+<li><a href="https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb">google webstore</a></li>
+</ul>
+</li>
+<li>oder 'Live Server' (VSCode Erweiterung)
+<ul>
+<li>[https://ritwickdey.github.io/vscode-live-server/]</li>
+</ul>
+</li>
+<li>einen Push-Server immitieren z.B. mit npm-Packet 'web-push'
+<ul>
+<li>[https://www.npmjs.com/package/web-push]</li>
+<li>[https://serviceworke.rs/web-push.html]</li>
+</ul>
+</li>
+<li>oder anderen Bibliotheken
+<ul>
+<li>[https://github.com/web-push-libs/]</li>
+</ul>
+</li>
+</ul>
+<p>SPEZIFIKATIONEN</p>
+<ul>
+<li>[https://www.w3.org/TR/push-api/]</li>
+<li>[https://datatracker.ietf.org/doc/rfc8292/?include_text=1]</li>
+<li>[https://tools.ietf.org/html/draft-ietf-webpush-encryption-09]</li>
+<li>Versionierung der Spezifikation [https://datatracker.ietf.org/wg/webpush]</li>
+</ul>
+<!--
+[34](pwa-notes.md#34)
+-->
+</article>
+<article>
+<hr>
+<h3 id="push-notifications--notifications-api">PUSH NOTIFICATIONS &gt; NOTIFICATIONS API</h3>
+<p>DOKUMENTATION [https://developer.mozilla.org/de/docs/Web/API/Notifications_API]</p>
+<p>SPEZIFIKATION [https://notifications.spec.whatwg.org/]</p>
+<!--
+[35](pwa-notes.md#35) 
+-->
+</article>
+<article>
+<hr>
+<h3 id="push-notifications--js">PUSH NOTIFICATIONS &amp; JS</h3>
+<p>In JavaScript ist das Konzept von Push-Benachrichtigungen durch folgende Objekte realisiert</p>
+<ul>
+<li>PushManager</li>
+<li>PushSubscription</li>
+<li>PushSubscriptionOptions</li>
+</ul>
+</article>
+<article>
+<hr>
+<h3 id="push-notifications--push-manager">PUSH NOTIFICATIONS &gt; PUSH MANAGER</h3>
+<p>PushManager (Ableitung: Object)</p>
+<ul>
+<li>getSubscription(): Promise<code>&lt;PushSubscription&gt;</code> || null</li>
+<li>permissionState()</li>
+<li>subscribe(): Promise<code>&lt;PushSubscribtion&gt;</code></li>
+</ul>
+<p>Objekt 'PushManager' ist abgeleitet vom Objekt 'Object'</p>
+<p>[https://developer.mozilla.org/de/docs/Web/API/PushManager]</p>
+<!--
+[36](pwa-notes.md#36)
+-->
+</article>
+<article>
+<hr>
+<h3 id="push-notifications--push-subscription">PUSH NOTIFICATIONS &gt; PUSH SUBSCRIPTION</h3>
+<p>PushSubscription</p>
+<ul>
+<li>endpoint</li>
+<li>expirationTime</li>
+<li>getKey()</li>
+<li>options</li>
+<li>toJSON()</li>
+<li>unsubscribe()</li>
+</ul>
+<p>Objekt 'PushSubscription' ist abgeleitet vom Objekt 'Object'</p>
+<!--
+[37](pwa-notes.md#37)
+-->
+</article>
+<article>
+<hr>
+<h3 id="push-notifications--push-subscription-options">PUSH NOTIFICATIONS &gt; PUSH SUBSCRIPTION OPTIONS</h3>
+<p>PushSubcriptionOptions (Ableitung: Object)</p>
+<ul>
+<li>applicationServerKey: UInt8Array</li>
+<li>userVisibleOnly: boolean</li>
+</ul>
+<p>Objekt 'PushSubcriptionOptions' ist abgeleitet vom Objekt 'Object'</p>
+<p>'userVisibleOnly' soll auf 'true' gesetzt werden, wenn die Benachrichtigungen jedes Mal gezeigt werden sollen, wenn eine Push-Nachricht kommt</p>
+<!--
+[38](pwa-notes.md#38)
+-->
+</article>
+<article>
+<hr>
+<h3 id="vapid-keys--idea">#VAPID-KEYS &gt; IDEA</h3>
+<p>WAS SIND VAPID SCHLÜSSEL</p>
+<ul>
+<li>VAPID: Voluntary Application Server Identification, de: Freiwillige Identifikation des Anwendungsservers</li>
+<li>ein Paar aus einem öffentlichen und einem privaten Schlüssel</li>
+<li>ein Schlüssel ist ein String (ähnlich wie Passwort-String)</li>
+</ul>
+<p>WOZU SIND VAPID SCHLÜSSEL</p>
+<ul>
+<li>die Schlüssel werden bei Push-Benachrichtigungen gebraucht</li>
+<li>die Schlüssel sind nötig, damit die Anwendung auf dem Client-Gerät und das entsprechende Back-End auf einem Server sich gegenseitig erkennen</li>
+</ul>
+<p>DOKUMENTATION : BLOG</p>
+<ul>
+<li>[https://blog.mozilla.org/services/2016/04/04/using-vapid-with-webpush/]</li>
+</ul>
+<p>TOOLS : GENERATOREN</p>
+<ul>
+<li>[https://vapidkeys.com/]</li>
+<li>[https://d3v.one/vapid-key-generator/]</li>
+<li>oder auch als npm Packet [https://github.com/web-push-libs/web-push]</li>
+<li>web-push generate-vapid-keys [--json]</li>
+</ul>
+<p>SPEZIFIKATION:</p>
+<ul>
+<li>[https://tools.ietf.org/html/draft-ietf-webpush-vapid-01]</li>
+<li>Versionierung der Spezifikation: [https://datatracker.ietf.org/doc/rfc8292/]</li>
+</ul>
+<!--
+[39](pwa-notes.md#39)
+-->
+</article>
+<article>
+<hr>
+<h3 id="vapid-keys--application-server-key">VAPID KEYS &gt; APPLICATION SERVER KEY</h3>
+<ul>
+<li>Private Key befindet sich auf der Server-Seite der Anwendung</li>
+<li>Den öffentlichen Schlüssel speichert man auf der Client-Seite der Anwendung</li>
+<li>Der wird gebraucht bei der Methode 'subscribe()' vom PushManager</li>
+<li>der öffentliche Schlüssel ist ursprünglich laut den Regeln von Base64 URL kodiert und soll in JavaScript in ein Uint8Array umgewandelt werden</li>
+</ul>
+<pre class="hljs"><code><div>swRegistration.pushManager.subscribe({
+    <span class="hljs-attr">userVisibleOnly</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">applicationServerKey</span>: applicationServerKey
+})
+</div></code></pre>
+<!--
+[40](pwa-notes.md#40)
+-->
+</article>
+<article class="hidden">
+<!--
+
+-----------------------------------------------------------------
+
+### KAPITEL-NAME - BASE64 & UINT8ARRAY ###
+
+-->
+<!--
+[41](pwa-notes.md#41)
+-->
+</article>
+<article class="hidden">
+<!--
+
+-----------------------------------------------------------------
+
+### PWA & PUSH & NOTIFICATIONS > WEB PUSH PROTOCOL ###
+
+-->
+<!--
+[42](pwa-notes.md#42)
+-->
+</article>
+<article class="hidden">
+<!--
+[43](pwa-notes.md#43)
+-->
+</article>
+<article>
+<hr>
+<h3 id="push-notifications--lab">PUSH NOTIFICATIONS &gt; LAB</h3>
+<p>live Beispiel
+[https://d3v.one/apps/pwa/push/]</p>
+</article>
+<article>
+<hr>
+<h4 id="back-to-readme">back to readme</h4>
+</article>
+</section>
+<!-- //////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////// -->
+<section class="page">
+<article>
+<h2 id="pwa-tools--frameworks">PWA-TOOLS-&amp;-FRAMEWORKS</h2>
+<hr>
+<p><a href="#secondary-tools">SECONDARY TOOLS</a></p>
+<p><a href="#pwa-tools-%3E-#workbox">PWA TOOLS &gt; #WORKBOX</a></p>
+<p><a href="#pwa-tools-%3E-#pwa-builder">PWA TOOLS &gt; #PWA-BUILDER</a></p>
+<p><a href="#pwa-frameworks-%3E-#angular-&amp;-co">PWA FRAMEWORKS &gt; #ANGULAR &amp; CO</a></p>
+</article>
+<article>
+<hr>
+<h3 id="secondary-tools">SECONDARY TOOLS</h3>
+<p>Werkzeug zum Hinzufügen von Offline-Funktionalitäten zu den Websites</p>
+<ul>
+<li>siehe Kapitel PWA &gt; FRAMEWORKS</li>
+<li>[https://developers.google.com/web/tools/workbox]</li>
+</ul>
+<p>Werkzeug zum Umwandeln einer Website in die PWA oder zum Üben</p>
+<ul>
+<li>siehe Kapitel PWA &gt; FRAMEWORKS</li>
+<li>[https://www.pwabuilder.com/]</li>
+</ul>
+<p>Sammlung von Werkzeugen für PWA mit TWA</p>
+<ul>
+<li>siehe Kapitel PWA &gt; FRAMEWORKS</li>
+<li>[https://github.com/GoogleChromeLabs/bubblewrap]</li>
+</ul>
+</article>
+<article>
+<hr>
+<h3 id="pwa-tools--workbox">PWA TOOLS &gt; #WORKBOX</h3>
+<p>Werkzeug zum Hinzufügen von Offline-Funktionalitäten zu den Websites [https://github.com/GoogleChrome/workbox]</p>
+<p>DOKUMENTATION [https://developers.google.com/web/tools/workbox]</p>
+<p>ANLEITUNGEN</p>
+<ul>
+<li>[https://codelabs.developers.google.com/codelabs/workbox-lab/index.html#0]</li>
+<li>[https://codelabs.developers.google.com/codelabs/workbox-indexeddb/index.html?index=..%2F..index#0]</li>
+</ul>
+<!--
+[44](pwa-notes.md#44)
+-->
+</article>
+<article>
+<hr>
+<h3 id="pwa-tools--pwa-builder">PWA TOOLS &gt; #PWA-BUILDER</h3>
+<p>Werkzeug zum Umwandeln einer Website in die PWA oder zum Üben
+[https://www.pwabuilder.com/]</p>
+<p>[https://www.pwabuilder.com/serviceworker]</p>
+<!--
+[4](pwa-notes.md#4)
+-->
+</article>
+<article>
+<hr>
+<h3 id="pwa--frameworks--angular--co">PWA &gt; FRAMEWORKS &gt; #ANGULAR &amp; CO</h3>
+<p>Das Framework Angular setzt auch Service-Worker ein und kann als ein PWA-Framework genutzt werden
+[https://angular.io/]</p>
+<p>im Fall von SPA-Frameworks haben die Service Worker:</p>
+<ul>
+<li>die gleiche Routing-Logik wie der Web-Server</li>
+<li>die gleiche Templates-Logik wie der Web-Server</li>
+</ul>
+<!--
+[45](pwa-notes.md#45)
+-->
+</article>
+<article>
+<hr>
+<h4 id="back-to-readme">back to readme</h4>
+</article>
+</section>
+<!-- //////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////// -->
+<section class="page">
+<article>
+<h2 id="client-device-access">CLIENT-DEVICE-ACCESS</h2>
+<hr>
+<p><a href="#file-access">FILE ACCESS</a></p>
+<p><a href="#hardware-access">HARDWARE ACCESS</a></p>
+</article>
+<article>
+<hr>
+<h3 id="what-web-can-do">WHAT WEB CAN DO</h3>
+<p>Werkzeug zum Testen vom Browser</p>
+<ul>
+<li>um zu wissen, auf welche Funktionen vom Endgerät ein konkreter Browser zugreifen kann</li>
+<li>[https://whatwebcando.today/]</li>
+</ul>
+<!-- TODO #9 -->
+</article>
+<article>
+<hr>
+<h3 id="file-access">FILE ACCESS</h3>
+<p>Zugriffe auf das native Dateisystem oder das Adressbuch sind mit Progressive Web Apps erst in Testversionen wie Google Chromium möglich.</p>
+<p>[https://www.heise.de/developer/artikel/Google-Projekt-Fugu-Die-Macht-des-Kugelfisches-4255636.html]</p>
+</article>
+<article>
+<hr>
+<h3 id="hardware-access">HARDWARE ACCESS</h3>
+<p>Hardwarezugriff
+PWAs bieten ebenfalls die Möglichkeit, verschiedene native Funktionen zu implementieren. Es kann auf Sensorikdaten und Kameras zugegriffen werden oder Pushnotifications erstellt werden.
+[https://goingmeta.io/progressive-web-app/]</p>
+<p>Werkzeug zum Testen vom Browser
+um zu wissen, auf welche Funktionen vom Endgerät ein konkreter Browser zugreifen kann
+[https://whatwebcando.today/]</p>
+</article>
+<article class="hidden">
+<!--
+[46](pwa-notes.md#46)
+-->
+</article>
+<article class="hidden">
+<!--
+[47](pwa-notes.md#47)
+-->
+</article>
+<article class="hidden">
+<!--
+[48](pwa-notes.md#48)
+-->
+</article>
+<article class="hidden">
+<!--
+[49](pwa-notes.md#49)
+-->
+</article>
+<article>
+<hr>
+<h4 id="back-to-readme">back to readme</h4>
+</article>
+</section>
+<!-- //////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////// -->
+<section class="page">
+<article>
+<h2 id="facts">FACTS</h2>
+<hr>
+<p><a href="#twa-%3E-idea--links">#TWA &gt; IDEA &amp; LINKS</a></p>
+<p><a href="#good-pwa-checklist">GOOD PWA CHECKLIST</a></p>
+<p><a href="#advantages-of-pwa">ADVANTAGES OF PWA</a></p>
+<p><a href="#disadvantages-of-pwa">DISADVANTAGES OF PWA</a></p>
+<p><a href="#browser-support">BROWSER SUPPORT</a></p>
+<p><a href="#ausblick">AUSBLICK</a></p>
+</article>
+<article>
+<hr>
+<h3 id="twa--idea--links">#TWA &gt; IDEA &amp; LINKS</h3>
+<p>WAS IST TWA</p>
+<ul>
+<li>Trusted Web Activities</li>
+<li>eingeführt mit der Chrome-Version 72 Anfang 2019</li>
+</ul>
+<p>WOZU SIND TWA</p>
+<ul>
+<li>um Google-Play-Store unter Android als Distributionsplattform für PWAs zu nutzen</li>
+</ul>
+<p>ANLEITUNG</p>
+<ul>
+<li>[https://blog.chromium.org/2019/02/introducing-trusted-web-activity-for.html]</li>
+<li>[https://developers.google.com/web/android/trusted-web-activity/]</li>
+</ul>
+<p>TOOLS</p>
+<ul>
+<li>Sammlung von Werkzeugen für PWA mit TWA [https://github.com/GoogleChromeLabs/bubblewrap]</li>
+</ul>
+</article>
+<article>
+<hr>
+<h3 id="good-pwa-checklist">GOOD PWA CHECKLIST</h3>
+<ul>
+<li>
+<p>… Sachen aus den früheren Abschnitten</p>
+</li>
+<li>
+<p>Plus: (These checks are required by the baseline PWA Checklist but are not automatically checked by Lighthouse. They do not affect your score but it's important that you verify them manually.)</p>
+<ul>
+<li>die Site funktioniert in verschiedenen Browsern *</li>
+<li>**</li>
+<li>jede Seite (Page) hat eine URL ***</li>
+</ul>
+</li>
+<li>
+<p>[https://web.dev/pwa-checklist/]</p>
+</li>
+</ul>
+<!--
+[50](pwa-notes.md#50)
+-->
+</article>
+<article>
+<hr>
+<h3 id="advantages-of-pwa">ADVANTAGES OF PWA</h3>
+<ul>
+<li>PWAs benötigen weniger Speicherplatz auf dem Endgerät</li>
+<li>um nicht mehrere Versionen einer Anwendung für verschiedene Plattformen entwickeln zu müssen</li>
+<li>Apps werden erst von den Web Stores validiert und freigegeben. PWAs sind sofort einsatzbereit.</li>
+<li>Aufgerufene PWAs gewährleisten, dass jeder Nutzer die aktuellste Version verwendet. Bei einer App können Nutzer die Aktualisierung verzögern.</li>
+</ul>
+</article>
+<article>
+<hr>
+<h3 id="disadvantages-of-pwa">DISADVANTAGES OF PWA</h3>
+<ul>
+<li>PWAs haben limitierten Zugriff auf die Funktionen eines Endgeräts.</li>
+<li>Sollen PWAs mehrere mobile Browser unterstützen, schnellen die Kosten für die Entwicklung und Wartung in die Höhe.</li>
+<li>Nutzer finden eine Progressive Web App womöglich schlechter, da diese nicht in App Stores gelistet sein muss.</li>
+</ul>
+<article>
+<hr>
+<h3 id="browser-support">BROWSER SUPPORT</h3>
+<ul>
+<li>Ein vollständiger Support von Progressive Web Apps ist derzeit nur mit Vorabversionen gegeben. Chrome und Firefox sind voll kompatibel, von Safari gibt es positive Signale und Microsoft Edge nutzt künftig ebenfalls Googles Chrome-Module. Auf iOS ist die Offline-Funktionalität verfügbar, seit mit Version 11.3 Service Worker und das Web-App-Manifest in Safari 11.1 implementiert wurden.</li>
+<li>Da PWAs auf Progressive Enhancement setzen, können sie auch in Browsern verwendet werden, die die Service-Worker-Technik nicht unterstützen; nur ist dann eine Internetverbindung nötig.</li>
+<li>es funktioniert unter Windows ab Version 7, macOS. Linux, Xbox One, Android, iOS, iPadOS und natürlich Chrome OS, allerdings nicht mit jedem Browser</li>
+<li>Nicht nutzbar für PWA sind die Browser in Geräten wie Smart TV, Apple TV, Android TV, Chromecast, Playstations und anderen Konsolen, sowie digitalen Assistenten oder VR/AR-Hardware.</li>
+</ul>
+<!--
+[51](pwa-notes.md#51)
+-->
+</article>
+<article>
+<hr>
+<h3 id="ausblick">AUSBLICK</h3>
+<p>Was kommt als nächstes?</p>
+<p>Die Chromium-Fraktion treibt die Möglichkeiten der PWA-Erstellung weiter voran. Unter Chrome, Samsung Internet und Microsofts neuem Edge gesellen sich neue API, etwa WebNFC, zu den bereits vorhandenen wie Webassembly, WebRTC, Webpush, Webauthn, Webshare, WebXR oder Zahlungsschnittstellen hinzu. Ebenso dürfen wir wohl die Anpassung der Specs des Web App Manifest erwarten, die die Nutzung des populären Dark Mode möglich machen wird.</p>
+<!--
+[52](pwa-notes.md#52)
+-->
+</article>
+<article>
+<hr>
+<h4 id="back-to-readme">back to readme</h4>
+</article>
+</section>
+<!-- //////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////// -->
+<section class="page">
+<article>
+<h2 id="anhang">ANHANG</h2>
+<hr>
+<h3 id="pwa--hashtags-used-in-these-slides">PWA &gt; HASHTAGS USED IN THESE SLIDES</h3>
+<p>Diese Hashtags sind wie Glossar gedacht. Geben Sie ein Hashtag aus der Liste in die Suchfunktion ein, um sich die Definition zum gesuchten Begriff anzuschauen</p>
+<ul>
+<li>#app-shell</li>
+<li>#bubblewrap</li>
+<li>#manifest</li>
+<li>#maskable-icon</li>
+<li>#push-notifications</li>
+<li>#pwa</li>
+<li>#pwa-builder</li>
+<li>#service-worker</li>
+<li>#twa</li>
+<li>#vapid-keys</li>
+<li>#web-app-manifest</li>
+<li>#workbox</li>
+</ul>
+</article>
+<article>
+<hr>
+<h3 id="pwa--sources-used-in-these-slides">PWA &gt; SOURCES USED IN THESE SLIDES</h3>
+<p>QUELLEN, genutzt für den Slides</p>
+<p>https://www.hosteurope.de/blog/warum-sie-progressive-web-apps-pwa-entwickeln-sollten/
+Verarbeitet am 30.08.2020</p>
+<p>https://t3n.de/news/webdesign-steht-um-jahr-2020-1242754/
+Verarbeitet am 30.08.2020</p>
+</article>
+<article>
+<hr>
+<h4 id="back-to-readme">back to readme</h4>
+</article>
+</section>
+
+</body>
+</html>
