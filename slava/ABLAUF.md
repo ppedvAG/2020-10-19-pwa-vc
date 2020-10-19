@@ -2,18 +2,18 @@
 
 ## MODULE 00 | WARMING UP
 
-- [] HTML [demo](demos/m00-warming-up/html.html)
-- [] CSS [demo](demos/m00-warming-up/css.css)
-- [] JS [demo](demos/m00-warming-up/js.js)
-- [] VScode Shortcuts [VScode Shortcuts](shortcuts-vscode.md)
+- [x] HTML [demo](demos/m00-warming-up/html.html)
+- [x] CSS [demo](demos/m00-warming-up/css.css)
+- [x] JS [demo](demos/m00-warming-up/js.js)
+- [x] VScode Shortcuts [VScode Shortcuts](shortcuts-vscode.md)
+- [x] Commit:[commit](https://github.com/ppedvAG/2020-10-19-pwa-vc/commit/85af89bc1b5caff52b1bcffe4d5c1855f99e2ae9)
+
 
 ## MODULE 01 | GETTING STARTED
 
-- [ ] Folien: [pwa getting started](slides/PWA.md#getting-started)
-- [ ] Demo:[index.html](demos/m01-getting-started/index.html)
-- [ ] Aufgabe:
-- [ ] L�sung:
-- [ ] Commit:
+- [x] Folien: [pwa getting started](slides/PWA.md#getting-started)
+- [x] Demo:[index.html](demos/m01-getting-started/index.html)
+- [x] Commit:[commit](https://github.com/ppedvAG/2020-10-19-pwa-vc/commit/80fd6641c72f3d93625c2a628e9141b3c9e7468a)
 
 ## MODULE XX | BROWSER STORAGE
 
