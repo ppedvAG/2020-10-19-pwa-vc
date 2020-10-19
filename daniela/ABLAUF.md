@@ -31,17 +31,14 @@
   
 ## MODULE 04 | CACHING STRATEGIES
 
-- [ ] Folien: [caching strategies](slides/PWA.md#caching-strategies)
-- [ ] Demo: [offline.html](demo/m04-offline/offline.html)
-- [ ] Commit:[Commit]()
+- [x] Folien: [caching strategies](slides/PWA.md#caching-strategies)
+- [x] Demo: [offline.html](demo/m04-offline/offline.html)
+- [x] Commit:[Commit](https://github.com/ppedvAG/2020-10-19-pwa-vc/commit/7eb94d966ebdd5279d4d40746a0ea79341331394)
 
-## MODULE 03 | SERVICE WORKER
+## MODULE 05 | SERVICE WORKER
 
 - [ ] Folien: [service worker](slides/PWA.md#service-worker)
-- [ ] Link:
 - [ ] Demo:
-- [ ] Aufgabe:
-- [ ] L�sung:
 - [ ] Commit:
 
 ## MODULE XX | WEB APP MANIFEST
