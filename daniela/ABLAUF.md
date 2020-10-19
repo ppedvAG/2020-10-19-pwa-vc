@@ -37,18 +37,15 @@
 
 ## MODULE 05 | SERVICE WORKER
 
-- [ ] Folien: [service worker](slides/PWA.md#service-worker)
-- [ ] Demo:
-- [ ] Commit:
+- [x] ] Folien: [service worker](slides/PWA.md#service-worker)
+- [x] ] Demo: [demo sw](demo/m05-m05-service-worker/../m05-service-worker/sw.js)
+- [x] ] Commit:[Commit](https://github.com/ppedvAG/2020-10-19-pwa-vc/commit/d391dad3670fc6446ffa5572fc7ea5bd905e8918)
 
-## MODULE XX | WEB APP MANIFEST
+## MODULE 06  | WEB APP MANIFEST
 
-- [ ] Folien: [web-app-manifest](slides/PWA.md#web-app-manifest)
-- [ ] Link:
-- [ ] Demo:
-- [ ] Aufgabe:
-- [ ] L�sung:
-- [ ] Commit:
+- [x] Folien: [web-app-manifest](slides/PWA.md#web-app-manifest)
+- [x] Demo: [demo manifest](demo/m06-manifest/manifest.json)
+- [x] Commit:[Commit]()
 
 ## MODULE XX | INSTALLABILITY
 
